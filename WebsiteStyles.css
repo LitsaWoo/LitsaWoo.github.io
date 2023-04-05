@@ -1,0 +1,177 @@
+.jumbotron {
+    background-color: #0b6326;
+    color: rgb(223, 243, 229);
+    text-align: center;
+    padding: 75px 25px;
+    margin: 0;
+  }
+
+
+.About {
+    background-color: #c4efd0;
+    text-align: center;
+    padding: 60px 50px;
+    height: auto;
+    float: left;
+    width: 30%;
+    
+    font-size: 15px;
+}
+
+.top {
+    margin-top: 0;
+    margin-bottom: 0px;
+    display:flex;
+    
+}
+
+.Experience {
+    background-color: rgb(223, 243, 229);
+    text-align: center;
+    padding: 60px 50px;
+    height: auto;
+    float: right;
+    width: 70%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.experience2 {
+    margin-top: 50px;
+    position: relative;
+    top: 5px;
+    width: 25%;
+    display: inline-block;
+    float: left;
+    
+} 
+
+.Surveys {
+    margin-top: 50px;
+    position: relative;
+    top: 5px;
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+
+.labwork {
+    margin-top: 50px;
+    top: 5px;
+    width: 25%;
+    display: inline;
+    float: left;
+}
+
+.museum {
+    margin-top: 50px;
+    position: relative;
+    top: 5px;
+    width: 25%;
+    display: inline-block;
+    float: right; 
+}
+
+.me {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #0b6326;
+    height: 350px;
+       
+  }
+
+  .carousel-indicators li {
+    border-color: #0b6326;
+    height: 8px;
+    width: 8px;
+    display: inline-block;
+    position:relative;
+    top: 50px;
+     }
+  
+   .carousel-indicators li.active {
+    background-color: #0b6326;
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    position: relative;
+    top: 50px;
+    }
+
+  .carousel-inner {
+     border-radius: 50%;
+     height: 350px;
+     width: 350px;
+     margin: auto;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: 0;
+    background-color: #0b6326;
+    font-size: 20px;
+    letter-spacing: 4px;
+    height: 30px;
+    }
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #0b6326 !important;
+        background-color: #c4efd0 !important;
+      }
+
+.navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #0b6326 !important;
+      }
+.navbar li a, .navbar {
+    color:rgb(223, 243, 229) !important;
+}
+
+.webapps {
+    background-color: rgb(237, 251, 241);
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
+    display: inline-block;
+   }
+
+.pending {
+    font-size: 115px;
+    display: inline-block;
+}
+
+.contact {
+    background-color: #c99c5a;
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
+    display: inline-block;
+}
+
+.button {
+    background-color: #eacb9d;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+    padding: 16px;
+}
+
+.button:hover {
+    background-color: #fce5c1;
+}
+
+.scene {
+    height: auto;
+    width: 100%;
+}
