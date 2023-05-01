@@ -142,10 +142,24 @@
     display: inline-block;
    }
 
-.pending {
+.mymap {
     font-size: 115px;
     display: inline-block;
 }
+
+.mongoliamap {
+    font-size: 60px ;
+    color:#0b6326
+}
+
+.mongoliamap:hover {
+    color:#e0b611
+}
+
+.mongoliamap:visited {
+    color:#937602
+}
+
 
 .contact {
     background-color: #c99c5a;
