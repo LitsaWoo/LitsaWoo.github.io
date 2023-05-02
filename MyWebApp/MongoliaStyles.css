@@ -15,7 +15,6 @@ margin: 0;
 #searchbar{
     z-index: 4000;
     position: absolute;
-    
     top: 30px;
     left: 30px;
     margin: 5px;
@@ -44,36 +43,27 @@ margin: 0;
 }
 
 #slider {
-    z-index: 1;
+    z-index: 1000;
     position: absolute;
     text-align: center;
-    height: 70%;
+    height: 68%;
     top: 8%;
     bottom: 8%;
     right: 0px;
     margin: 15px;
     padding-bottom: 30px;
-    padding-left: 25px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 30px;
     opacity:0.8;
     border-radius: 30px;
     background-color: rgb(0, 0, 0);
     color: white;
+    box-sizing: content-box;
 }
 
-
-#legend {
-    z-index: 1200;
-    position: absolute;
-    background-color: black;
-    opacity: 0.8;
-    border-radius: 30px;
-    height: 75px;
-    width: 200px;
-    left: 45%;
-    bottom: 5%;
-    padding: 10px, 15px;
+.noui-target {
+  box-sizing: content-box;
 }
 
   #About {
@@ -162,22 +152,1272 @@ a:hover{
   left: 12.5%;
   right: 12.5%;
   z-index: 1000;
-  bottom: -310px;
+  bottom: -590px;
   width: 75%;
-  height: 300px;
-  padding: 20px;
+  height: 580px;
+  padding: 30px;
   text-align: center;
-  background-color: rgba(0,0,0,0.9);
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
-  font-size: 20px;
+  background-color: rgb(31, 31, 31);
+  box-shadow: 0px 2px 5px rgba(0,0,0,1);
+  opacity: 1;
+  font-size: 15px;
   color: white;
   transition: bottom 1s;
   -webkit-transition: bottom 1s;
-  
+  border-radius: 10% 10% 0% 0%;
+  overflow-y: auto;
 }
 
 #legend:hover {
   bottom:0px;
 }
 
+#words {
+  position: relative;
+  top: -25px;
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+}
 
+#table {
+ 
+  overflow-x: auto;
+}
+
+table {
+  table-layout: auto;
+  width: 100%;
+ }
+
+td {
+  word-wrap: break-word;
+  border-bottom: 1px solid white;
+  padding: 0;
+}
+
+tr:hover {
+  background-color:rgb(85, 85, 85) ;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(0, 0, 0); 
+  border-radius: 10px;
+  height: 570px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(173, 173, 173); 
+  border-radius: 10px;
+  height: 570px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c5c5c5; 
+}
+
+#Allocricetuluscurtatus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgb(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Alticola {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgb(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+
+#Alticolabarakshin {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(229, 132, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Alticolasemicanus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(247, 255, 1);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Alticolastrelzowi {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Alticolatuvinicus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Alticolatuvinicuscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(64, 49, 12);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Apodemus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(69, 249, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Apodemusagrarius {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Apodemuspeninsulae {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Apodemusuralensis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Bosgrunniens {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Buforaddei {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(229, 132, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Camelusbactrianus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(247, 255, 1);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Canislupus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Caprahircus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cardiocraniusparadoxus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(69, 249, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cervuscanadensis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cervuselaphus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Clethrionomys {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Clethrionomysrufocanus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 0, 0);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Clethrionomysrutilus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Clethrionomysrutiluscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(1, 10, 112);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cricetulus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(229, 132, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cricetulusbarabensis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(247, 255, 1);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cricetuluslongicaudatus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cricetuluslongicaudatuscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(37, 110, 7);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cricetulusmigratorius {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Cricetulussokolovi {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Crocidurashantungensis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Crocidurasuaveolens {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Dipussagitta {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(229, 132, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Dryomysnitedula {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ellobiustancrei {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Eolagurusluteus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(247, 255, 1);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Eptesicus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Eptesicusgobiensis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Eptesicusnilssoni {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Eptesicusserotinus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Equushemionus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Euchoreutesnaso {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(229, 132, 0);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Eutamiassibiricus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Gazellasubgutterosa {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(247, 255, 1);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Hemiechinusauritus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Hypsugoalaschanicus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Lasiopodomysbrandtii {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Lasiopodomysmandarinus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Lepustimidus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Lepustolai {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Marmota {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Marmotabaibacina {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(247, 255, 1);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Marmotasibirica {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Martesfoina {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Melesleucurus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Melesmeles {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Meriones {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Merionesmeridianus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Merionestamariscinus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Merionesunguiculatus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusarvalis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusfortis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusfortiscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(56, 2, 2);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusgregalis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusgregaliscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(8, 15, 87);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtuslimnophilus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusmaximowiczii {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusmaximowicziicf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(232, 145, 248);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusmongolicus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusmongolicuscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusoeconomus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Microtusoeconomuscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(62, 0, 151);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Mus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Musmusculus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Mustelaaltaica {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Mustelaerminea {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Mustelanivalis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myopusschisticolor {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myospalaxaspalax {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myospalaxpsilurus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myotisaurascens {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myotisbrandtii {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myotisdavidii {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myotisnattereri {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myotispetax {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Myotissibiricus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Neomysfodiens {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ochotona {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ochotonaalpina {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ochotonadauurica {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ochotonahoffmanni {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ochotonahyperborea {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ochotonapallasi {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ondatrazibethicus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Orientallactaga {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Orientallactagabalikunica {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 255, 255);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Orientallactagabullata {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(105, 1, 0);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Orientallactagasibirica {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 18, 204);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ovisammon {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(53, 171, 4);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Ovisaries {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 206, 162);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Phodopus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(103, 19, 215);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Phodopuscampbelli {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(186, 19, 215);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Phodopusroborovskii {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Plecotuskozlovi {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Plecotusognevi {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(105, 1, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Pygeretmuspumilio {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(0, 18, 204);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Rattusnorvegicus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(53, 171, 4);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Rhombomysopimus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(0, 206, 162);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Salpingotuscrassicauda {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Salpingotuskozlovi {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sciurusvulgaris {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(143, 143, 143);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorex {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(40, 87, 35);
+  border:3px solid rgba(40, 87, 35);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorexaraneus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(250, 117, 1);
+  border:3px solid rgba(250, 117, 1);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorexcaecutiens {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(255, 0, 0);
+  border:3px solid rgba(255, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorexdaphaenodon {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 255, 161);
+  border:3px solid rgba(0, 255, 161);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorexisodon {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 167, 255);
+  border:3px solid rgba(0, 167, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorexminutissimus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 87, 255);
+  border:3px solid rgba(0, 87, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorexroboratus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(21, 0, 255);
+  border:3px solid rgba(21, 0, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorexroboratuscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(21, 0, 255);
+  border:3px solid rgba(166, 158, 241);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorextundrensis {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(166, 158, 241);
+  border:3px solid rgba(166, 158, 241);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Sorextundrensiscf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(166, 158, 241);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Spermophilusalaschanicus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(166, 158, 241);
+  border:3px solid rgba(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Spermophilusdauricus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(166, 158, 241);
+  border:3px solid rgba(143, 143, 143);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Spermophiluspallidicauda {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(166, 158, 241);
+  border:3px solid rgba(186, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Spermophiluspallidicaudacf {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(166, 158, 241);
+  border:3px solid rgba(103, 19, 215);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Stylodipusandrewsi {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(166, 158, 241);
+  border:3px solid rgba(102, 7, 246);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Stylodipussungorus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(102, 7, 246);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Tamiassibiricus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(0, 167, 255);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Urocitellusundulatus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(139, 198, 131);
+  border:3px solid rgba(139, 198, 131);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Vespertilio {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(139, 198, 131);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Vespertiliomurinus {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(250, 255, 167);
+  border:3px solid rgba(250, 255, 167);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Vulpescorsac {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(64, 49, 12);
+  border:3px solid rgba(64, 49, 12);
+  border-radius: 50%;
+  display: inline-block
+}
+
+#Vulpesvulpes {
+  height: 10px;
+  width: 10px;
+  background-color:rgb(64, 49, 12);
+  border:3px solid rgba(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block
+}
