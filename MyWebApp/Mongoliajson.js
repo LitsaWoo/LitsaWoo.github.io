@@ -256,7 +256,7 @@ fetch("Species/MongoliaSpecies.geojson")
       case "Mustela erminea":
         return {color: "rgba(103, 19, 215, 1.0)", stroke: "rgba(53, 171, 4)"}; // purple with green outline
       case "Mustela nivalis":
-        return {color: "rgba(0, 206, 162, 1.0)", stroke: "rgba(105, 1, 0)"}; // teal with green outline
+        return {color: "rgba(0, 206, 162, 1.0)", stroke: "rgba(53, 171, 4)"}; // teal with green outline
       case "Myopus schisticolor":
         return {color: "rgba(103, 19, 215, 1.0)", stroke: "rgba(186, 19, 215)"}; // purple with pink outline
       case "Myospalax aspalax":
@@ -279,9 +279,7 @@ fetch("Species/MongoliaSpecies.geojson")
         return {color: "rgba(103, 19, 215, 1.0)", stroke: "rgba(0, 206, 162)"}; // purple with teal outline
       case "Ochotona":
         return {color: "rgba(186, 19, 215, 1.0)", stroke: "rgba(255, 255, 255)"}; // pink with white outline
-      case "Ochotona":
-        return {color: "rgba(105, 1, 0, 1.0)", stroke: "rgba(255, 255, 255)"}; // red with white outline
-      case "Ochotona alpina":
+     case "Ochotona alpina":
         return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(255, 255, 255)"}; // white
       case "Ochotona dauurica":
         return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(105, 1, 0)"}; // white with red outline
@@ -308,7 +306,7 @@ fetch("Species/MongoliaSpecies.geojson")
       case "Phodopus":
         return {color: "rgba(103, 19, 215, 1.0)", stroke: "rgba(143, 143, 143)"}; // purple with grey outline
       case "Phodopus campbelli":
-        return {color: "rgba(103, 19, 215, 1.0)", stroke: "rgba(143, 143, 143)"}; // pink with grey outline
+        return {color: "rgba(186, 19, 215, 1.0)", stroke: "rgba(143, 143, 143)"}; // pink with grey outline
       case "Phodopus roborovskii":
         return {color: "rgba(143, 143, 143)", stroke: "rgba(143, 143, 143)"}; // grey
       case "Plecotus kozlovi":
