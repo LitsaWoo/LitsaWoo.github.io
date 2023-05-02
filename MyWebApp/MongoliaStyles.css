@@ -62,8 +62,14 @@ margin: 0;
     box-sizing: content-box;
 }
 
-.noui-target {
-  box-sizing: content-box;
+#slider .noUi-connect {
+  background: rgb(126, 125, 125);
+}
+
+#slider .noUi-handle {
+  height:32px;
+  width: 32px;
+  border-radius: 50%;
 }
 
   #About {
