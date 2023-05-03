@@ -10,7 +10,21 @@ height: 100%;
 width: 100%;
 margin: 0;
 }
-   
+
+#Titles {
+  position: absolute;
+    z-index: 1000;
+    background-color: rgba(0,0,0, 0.5);
+    width: 275px;
+    border-radius: 30px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    left: 40%;
+    top: 30px;
+    height: 45px;
+    padding-top: 15px;
+}
 
 #searchbar{
     z-index: 4000;
@@ -22,7 +36,7 @@ margin: 0;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
-    opacity:0.8;
+    opacity:1;
     border-radius: 30px;
     background-color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
@@ -55,7 +69,7 @@ margin: 0;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 30px;
-    opacity:0.8;
+    opacity:1;
     border-radius: 30px;
     background-color: rgb(0, 0, 0);
     color: white;
@@ -76,7 +90,7 @@ margin: 0;
     position: absolute;
     z-index: 1000;
     background-color: black;
-    opacity: 0.8;
+    opacity: 1;
     bottom: 5%;
     right: 8px;
     height: 9%;
