@@ -167,7 +167,7 @@
     width: 100%;
     margin-top: 0;
     margin-bottom: 0;
-    height: auto;
+    height: 1000px;
     display: inline-block;
 }
 
@@ -186,6 +186,6 @@
 }
 
 .scene {
-    height: auto;
+    height: 500px;
     width: 100%;
 }
