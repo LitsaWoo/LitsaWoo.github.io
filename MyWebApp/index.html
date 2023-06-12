@@ -13,6 +13,7 @@
   <script src="Libraries/Slide Menu/Leaflet.SlideMenu-0.4.1/src/L.Control.SlideMenu.js"></script>
   <script src="Libraries/Legend/Leaflet.Legend-1.0.0/src/leaflet.legend.js"></script>
   <script src="Libraries/wNumb/wnumb-1.2.0/wNumb.js"></script>
+  <script src="JS/leaflet.markercluster.freezable.js"></script>
 
 
 
@@ -44,6 +45,10 @@
   <div id="About">
     <button id="aboutmap">About This Map</button>
   </div>
+
+ 
+
+
 
   <!-- Modal -->
   <div class="modal-background" id="modal-background">
@@ -111,9 +116,6 @@
     </optgroup>
     <optgroup label="Bos">
         <option value="Bos grunniens">Bos grunniens</option>
-    </optgroup>
-    <optgroup label="Bufo">
-        <option value="Bufo raddei">Bufo raddei</option>
     </optgroup>
     <optgroup label="Camelus">
       <option value="Camelus bactrianus">Camelus bactrianus</option>
@@ -321,9 +323,6 @@
       <option value="Stylodipus andrewsi">Stylodipus andrewsi</option>
       <option value="Stylodipus sungorus">Stylodipus sungorus</option>
     </optgroup>
-    <optgroup label="Tamias">
-      <option value="Tamias sibiricus">Tamias sibiricus</option>
-    </optgroup>
     <optgroup label="Urocitellus">
       <option value="Urocitellus undulatus">Urocitellus undulatus</option>
     </optgroup>
@@ -336,10 +335,22 @@
       <option value="Vulpes vulpes">Vulpes vulpes</option>
     </optgroup>
 </select>
+<button id="toggle" style="
+  background-color: rgb(237, 237, 237);
+  color: black;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  left: 15%;
+  margin-top: 5%;
+">Toggle Cluster</button>
   </div>
 
+  
    <!--Year Slider-->
 <div id="slider"></div>
+
 
 
 <!--Legend-->
@@ -396,11 +407,7 @@
 </td>
 <td>
   <div id="Bosgrunniens"></div>
-  <em>Bod grunniens</em>
-</td>
-<td>
-  <div id="Buforaddei"></div>
-  <em>Bufo raddei</em>
+  <em>Bos grunniens</em>
 </td>
 <td>
   <div id="Camelusbactrianus"></div>
@@ -430,12 +437,12 @@
   <div id="Clethrionomys"></div>
   <em>Clethrionomys</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Clethrionomysrufocanus"></div>
   <em>Clethrionomys rufocanus</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Clethrionomysrutilus"></div>
   <em>Clethrionomys rutilus</em>
@@ -472,12 +479,12 @@
   <div id="Crocidurashantungensis"></div>
   <em>Crocidura shantungensis</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Crocidurasuaveolens"></div>
   <em>Crocidura suaveolens</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Dipussagitta"></div>
   <em>Dipus sagitta</em>
@@ -511,15 +518,15 @@
   <em>Eptesicus serotinus</em>
 </td>
 <td>
-  <div id="Equus hemionus"></div>
+  <div id="Equushemionus"></div>
   <em>Equus hemionus</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Euchoreutesnaso"></div>
   <em>Euchoreutes naso</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Eutamiassibiricus"></div>
   <em>Eutamias sibiricus</em>
@@ -556,12 +563,12 @@
   <div id="Marmota"></div>
   <em>Marmota</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Marmotabaibacina"></div>
   <em>Marmota baibacina</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Marmotasibirica"></div>
   <em>Marmota sibirica</em>
@@ -598,12 +605,12 @@
   <div id="Microtus"></div>
   <em>Microtus</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Microtusarvalis"></div>
   <em>Microtus arvalis</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Microtusfortis"></div>
   <em>Microtus fortis</em>
@@ -639,12 +646,12 @@
   <div id="Microtusmongolicuscf"></div>
   <em>Microtus mongolicus cf.</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Microtusoeconomus"></div>
   <em>Microtus oeconomus</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Microtusoeconomuscf"></div>
   <em>Microtus oeconomus cf.</em>
@@ -681,12 +688,12 @@
   <div id="Myospalaxpsilurus"></div>
   <em>Myospalax psilurus</em>
 </td>
+<td>
+  <div id="Myotisaurascens"></div>
+  <em>Myotis aurascens</em>
+</td>
 </tr>
 <tr>
-<td>
-  <div id="Myotisaurescens"></div>
-  <em>Myotis aurescens</em>
-</td>
 <td>
   <div id="Myotisbrandtii"></div>
   <em>Myotis brandtii</em>
@@ -723,12 +730,12 @@
   <div id="Ochotonadauurica"></div>
   <em>Ochotona dauurica</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Ochotonahoffmanni"></div>
   <em>Ochotona hoffmanni</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Ochotonahyperborea"></div>
   <em>Ochotona hyperborea</em>
@@ -765,12 +772,12 @@
   <div id="Ovisaries"></div>
   <em>Ovis aries</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Phodopus"></div>
   <em>Phodopus</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Phodopuscampbelli"></div>
   <em>Phodopus campbelli</em>
@@ -784,7 +791,7 @@
   <em>Plectous kozlovi</em>
 </td>
 <td>
-  <div id="Plectousognevi"></div>
+  <div id="Plecotusognevi"></div>
   <em>Plecotus ognevi</em>
 </td>
 <td>
@@ -807,12 +814,12 @@
   <div id="Salpingotuskozlovi"></div>
   <em>Salpingotus kozlovi</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Sciurusvulgaris"></div>
   <em>Sciurus vulgaris</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Sorex"></div>
   <em>Sorex</em>
@@ -849,12 +856,12 @@
   <div id="Sorextundrensiscf"></div>
   <em>Sorex tundrensis cf.</em>
 </td>
-</tr>
-<tr>
 <td>
   <div id="Spermophilusalaschanicus"></div>
   <em>Spermophilus alaschanicus</em>
 </td>
+</tr>
+<tr>
 <td>
   <div id="Spermophilusdauricus"></div>
   <em>Spermophilus dauricus</em>
@@ -876,10 +883,6 @@
   <em>Stylodipus sungorus</em>
 </td>
 <td>
-  <div id="Tamiassibiricus"></div>
-  <em>Tamias sibiricus</em>
-</td>
-<td>
   <div id="Urocitellusundulatus"></div>
   <em>Urocitellus undulatus</em>
 </td>
@@ -890,10 +893,7 @@
 <td>
   <div id="Vespertiliomurinus"></div>
   <em>Vespertilio murinus</em>
-</td>
-</tr>
-<tr>
-<td>
+</td><td>
   <div id="Vulpescorsac"></div>
   <em>Vulpes corsac</em>
 </td>
