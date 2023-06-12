@@ -26,7 +26,7 @@ var Esri_WorldImagery = L.layerGroup([L.tileLayer('https://server.arcgisonline.c
     minZoom: 0,
     maxZoom: 20,
     ext: 'png',
-  })]);
+  })]).addTo(map);
   controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
   
   
@@ -35,7 +35,7 @@ var Esri_WorldImagery = L.layerGroup([L.tileLayer('https://server.arcgisonline.c
     attribution: false,
     maxZoom: 20,
   
-  }).addTo(map);
+  });
   controlLayers.addBaseLayer(CartoDB_DarkMatter, "Street Basemap");
   
  
@@ -100,6 +100,8 @@ fetch("Species/MongoliaSpecies.geojson")
     disableClusteringAtZoom: 20,
   });
 
+
+
   // Define a function to return color based on the scientific_name value
   function getColor(scientific_name) {
     switch (scientific_name) {
@@ -127,8 +129,6 @@ fetch("Species/MongoliaSpecies.geojson")
         return {color: "rgba(105, 1, 0, 1.0)", stroke: "rgba(105, 1, 0)"}; // red
       case "Bos grunniens":
         return {color: "rgba(105, 1, 0, 1.0)", stroke: "rgba(0, 18, 204)"}; // red with dark blue outline
-      case "Bufo raddei":
-        return {color: "rgba(105, 1, 0, 1.0)", stroke: "rgba(229, 132, 0)"}; // red with orange outline
       case "Camelus bactrianus":
         return {color: "rgba(105, 1, 0, 1.0)", stroke: "rgba(247, 255, 1)"}; // red with yellow outline
       case "Canis lupus":
@@ -357,8 +357,6 @@ fetch("Species/MongoliaSpecies.geojson")
         return {color: "rgba(102, 7, 246, 1.0)", stroke: "rgba(102, 7, 246)"}; // true purple
       case "Stylodipus sungorus":
         return {color: "rgba(102, 7, 246, 1.0)", stroke: "rgba(255, 255, 255)"}; // true purple with white outline
-      case "Tamias sibiricus":
-        return {color: "rgba(0, 167, 255, 1.0)", stroke: "rgba(255, 255, 255)"}; // calm blue with white outline
       case "Urocitellus undulatus":
         return {color: "rgba(139, 198, 131, 1.0)", stroke: "rgba(139, 198, 131)"}; // pistachio green
       case "Vespertilio":
@@ -474,6 +472,23 @@ fetch("Species/MongoliaSpecies.geojson")
   
     map.addLayer(markers);
 
+    
+// Get a reference to the toggle button
+const toggleClusterButton = document.getElementById("toggle");
+
+// Flag to track clustering state
+let isClusteringEnabled = true;
+
+// Add event listener to handle button click
+toggleClusterButton.addEventListener("click", function() {
+  if (isClusteringEnabled) {
+    markers.disableClustering();
+  } else {
+    markers.enableClustering();
+  }
+  
+  isClusteringEnabled = !isClusteringEnabled; // Toggle the flag
+});
 
   }});
 
