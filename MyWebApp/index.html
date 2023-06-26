@@ -14,8 +14,7 @@
   <script src="Libraries/Legend/Leaflet.Legend-1.0.0/src/leaflet.legend.js"></script>
   <script src="Libraries/wNumb/wnumb-1.2.0/wNumb.js"></script>
   <script src="JS/leaflet.markercluster.freezable.js"></script>
-
-
+  
 
   
 
@@ -93,6 +92,17 @@
   <p class="instruction">Use the dropdown menu <br>
     to add species to the map</p>
   <select name="Species[]" multiple id="Species" id="species">
+    <optgroup label="Alexandromys">
+      <option value="Alexandromys fortis">Alexandromys fortis</option>
+      <option value="Alexandromys fortis cf.">Alexandromys fortis cf.</option>
+      <option value="Alexandromys limnophilus">Alexandromys limnophilus</option>
+      <option value="Alexandromys maximowiczii">Alexandromys maximowiczii</option>
+      <option value="Alexandromys maximowiczii cf.">Alexandromys maximowiczii cf.</option>
+      <option value="Alexandromys mongolicus">Alexandromys mongolicus</option>
+      <option value="Alexandromys mongolicus cf.">Alexandromys mongolicus cf.</option>
+      <option value="Alexandromys oeconomus">Alexandromys oeconomus</option>
+      <option value="Alexandromys oeconomus cf.">Alexandromys oeconomus cf.</option>
+    </optgroup>
     <optgroup label="Allocricetulus">
         <option value="Allocricetulus curtatus">Allocricetulus curtatus</option>
     </optgroup>
@@ -131,16 +141,17 @@
 </optgroup>
 <optgroup label="Clethrionomys">
   <option value="Clethrionomys">Clethrionomys</option>
-  <option value="Clethrionomys rufocanus">Clethrionomys rufocanus</option>
   <option value="Clethrionomys rutilus">Clethrionomys rutilus</option>
   <option value="Clethrionomys rutilus cf.">Clethrionomys rutilus cf.</option>
+</optgroup>
+<optgroup label="Craseomys">
+  <option value="Craseomys rufocanus">Craseomys rufocanus</option>
 </optgroup>
 <optgroup label="Cricetulus">
   <option value="Cricetulus">Cricetulus</option>
   <option value="Cricetulus barabensis">Cricetulus barabensis</option>
   <option value="Cricetulus longicaudatus">Cricetulus longicaudatus</option>
   <option value="Cricetulus longicaudatus cf.">Cricetulus longicaudatus cf.</option>
-  <option value="Cricetulus migratorius">Cricetulus migratorius</option>
   <option value="Cricetulus sokolovi">Cricetulus sokolovi</option>
 </optgroup>
 <optgroup label="Crocidura">
@@ -212,17 +223,6 @@
 <optgroup label="Microtus">
   <option value="Microtus">Microtus</option>
   <option value="Microtus arvalis">Microtus arvalis</option>
-  <option value="Microtus fortis">Microtus fortis</option>
-  <option value="Microtus fortis cf.">Microtus fortis cf.</option>
-  <option value="Microtus gregalis">Microtus gregalis</option>
-  <option value="Microtus gregalis cf.">Microtus gregalis cf.</option>
-  <option value="Microtus limnophilus">Microtus limnophilus</option>
-  <option value="Microtus maximowiczii">Microtus maximowiczii</option>
-  <option value="Microtus maximowiczii cf.">Microtus maximowiczii cf.</option>
-  <option value="Microtus mongolicus">Microtus mongolicus</option>
-  <option value="Microtus mongolicus cf.">Microtus mongolicus cf.</option>
-  <option value="Microtus oeconomus">Microtus oeconomus</option>
-  <option value="Microtus oeconomus cf.">Microtus oeconomus cf.</option>
 </optgroup>
 <optgroup label="Mus">
   <option value="Mus">Mus</option>
@@ -250,6 +250,9 @@
   </optgroup>
   <optgroup label="Neomys">
     <option value="Neomys fodiens">Neomys fodiens</option>
+  </optgroup>
+  <optgroup label="Nothocricetulus">
+    <option value="Nothocricetulus migratorius">Nothocricetulus migratorius</option>
   </optgroup>
   <optgroup label="Ochotona">
     <option value="Ochotona">Ochotona</option>
@@ -315,6 +318,10 @@
       <option value="Spermophilus pallidicauda">Spermophilus pallidicauda</option>
       <option value="Spermophilus pallidicauda cf.">Spermophilus pallidicauda cf.</option>
     </optgroup>
+    <optgroup label="Stenocranius">
+      <option value="Stenocranius gregalis">Stenocranius gregalis</option>
+      <option value="Stenocranius gregalis cf.">Stenocranius gregalis cf.</option>
+    </optgroup>
     <optgroup label="Stylodipus">
       <option value="Stylodipus andrewsi">Stylodipus andrewsi</option>
       <option value="Stylodipus sungorus">Stylodipus sungorus</option>
@@ -341,6 +348,233 @@
   left: 15%;
   margin-top: 5%;
 ">Toggle Cluster</button>
+<br>
+<br>
+<h3 class="Titles">Range Maps</h3>
+<p class="instruction">Use the dropdown menu to add <br>
+  a species range to the map</p>
+  <select name="Range[]" multiple id="range" id="range">
+    <optgroup label="Alexandromys">
+      <option value="Alexandromys fortis">Alexandromys fortis</option>
+      <option value="Alexandromys limnophilus">Alexandromys limnophilus</option>
+      <option value="Alexandromys maximowiczii">Alexandromys maximowiczii</option>
+      <option value="Alexandromys mongolicus">Alexandromys mongolicus</option>
+      <option value="Alexandromys oeconomus">Alexandromys oeconomus</option>
+    </optgroup>
+    <optgroup label="Allocricetulus">
+        <option value="Allocricetulus curtatus">Allocricetulus curtatus</option>
+    </optgroup>
+    <optgroup label="Alticola">
+        <option value="Alticola barakshin">Alticola barakshin</option>
+        <option value="Alticola semicanus">Alticola semicanus</option>
+        <option value="Alticola strelzowi">Alticola strelzowi</option>
+        <option value="Alticola tuvinicus">Alticola tuvinicus</option>
+    </optgroup>
+    <optgroup label="Apodemus">
+        <option value="Apodemus agrarius">Apodemus agrarius</option>
+        <option value="Apodemus peninsulae">Apodemus peninsulae</option>
+        <option value="Apodemus uralensis">Apodemus uralensis</option>
+    </optgroup>
+    <optgroup label="Bos">
+        <option value="Bos grunniens">Bos grunniens</option>
+    </optgroup>
+    <optgroup label="Camelus">
+      <option value="Camelus bactrianus">Camelus bactrianus</option>
+  </optgroup>
+  <optgroup label="Canis">
+    <option value="Canis lupus">Canis lupus</option>
+</optgroup>
+<optgroup label="Capra">
+  <option value="Capra hircus">Capra hircus</option>
+</optgroup>
+<optgroup label="Cardiocranius">
+  <option value="Cardiocranius paradoxus">Cardiocranius paradoxus</option>
+</optgroup>
+<optgroup label="Cervus">
+  <option value="Cervus canadensis">Cervus canadensis</option>
+  <option value="Cervus elaphus">Cervus elaphus</option>
+</optgroup>
+<optgroup label="Clethrionomys">
+  <option value="Clethrionomys rutilus">Clethrionomys rutilus</option>
+</optgroup>
+<optgroup label="Craseomys">
+  <option value="Craseomys rufocanus">Craseomys rufocanus</option>
+</optgroup>
+<optgroup label="Cricetulus">
+  <option value="Cricetulus barabensis">Cricetulus barabensis</option>
+  <option value="Cricetulus longicaudatus">Cricetulus longicaudatus</option>
+  <option value="Cricetulus sokolovi">Cricetulus sokolovi</option>
+</optgroup>
+<optgroup label="Crocidura">
+  <option value="Crocidura shantungensis">Crocidura shantungensis</option>
+  <option value="Crocidura suaveolens">Crocidura suaveolens</option>
+</optgroup>
+<optgroup label="Dipus">
+  <option value="Dipus sagitta">Dipus sagitta</option>
+</optgroup>
+<optgroup label="Dryomys">
+  <option value="Dryomys nitedula">Dryomys nitedula</option>
+</optgroup>
+<optgroup label="Ellobius">
+  <option value="Ellobius tancrei">Ellobius tancrei</option>
+</optgroup>
+<optgroup label="Eolagurus">
+  <option value="Eolagurus luteus">Eolagurus luteus</option>
+</optgroup>
+<optgroup label="Eptesicus">
+  <option value="Eptesicus gobiensis">Eptesicus gobiensis</option>
+  <option value="Eptesicus nilssoni">Eptesicus nilssoni</option>
+  <option value="Eptesicus serotinus">Eptesicus serotinus</option>
+</optgroup>
+<optgroup label="Equus">
+  <option value="Equus hemionus">Equus hemionus</option>
+</optgroup>
+<optgroup label="Euchoreutes">
+  <option value="Euchoreutes naso">Euchoreutes naso</option>
+</optgroup>
+<optgroup label="Eutamias">
+  <option value="Eutamias sibiricus">Eutamias sibiricus</option>
+</optgroup>
+<optgroup label="Gazella">
+  <option value="Gazella subguttorosa">Gazella subgutterosa</option>
+</optgroup>
+<optgroup label="Hemiechinus">
+  <option value="Hemiechinus auritus">Hemiechinus auritus</option>
+</optgroup>
+<optgroup label="Hypsugo">
+  <option value="Hypsugo alaschanicus">Hypsugo alaschanicus</option>
+</optgroup>
+<optgroup label="Lasiopodomys">
+  <option value="Lasiopodomys brandtii">Lasiopodomys brandtii</option>
+  <option value="Lasiopodomys mandarinus">Lasiopodomys mandarinus</option>
+</optgroup>
+<optgroup label="Lepus">
+  <option value="Lepus timidus">Lepus timidus</option>
+  <option value="Lepus tolai">Lepus tolai</option>
+</optgroup>
+<optgroup label="Marmota">
+  <option value="Marmota baibacina">Marmota baibacina</option>
+  <option value="Marmota sibirica">Marmota sibirica</option>
+</optgroup>
+<optgroup label="Martes">
+  <option value="Martes foina">Martes foina</option>
+ </optgroup>
+ <optgroup label="Meles">
+  <option value="Meles leucurus">Meles leucurus</option>
+  <option value="Meles meles">Meles meles</option>
+</optgroup>
+<optgroup label="Meriones">
+  <option value="Meriones meridianus">Meriones meridianus</option>
+  <option value="Meriones tamariscinus">Meriones tamariscinus</option>
+  <option value="Meriones unguiculatus">Meriones unguiculatus</option>
+</optgroup>
+<optgroup label="Microtus">
+  <option value="Microtus arvalis">Microtus arvalis</option>
+</optgroup>
+<optgroup label="Mus">
+  <option value="Mus musculus">Mus musculus</option>
+</optgroup>
+<optgroup label="Mustela">
+  <option value="Mustela altaica">Mustela altaica</option>
+  <option value="Mustela erminea">Mustela erminea</option>
+  <option value="Mustela nivalis">Mustela nivalis</option>
+</optgroup>
+<optgroup label="Myopus">
+  <option value="Myopus schisticolor">Myopus schisticolor</option>
+</optgroup>
+<optgroup label="Myospalax">
+  <option value="Myospalax aspalax">Myospalax aspalax</option>
+  <option value="Myospalax psilurus">Myospalax psilurus</option>
+</optgroup>
+<optgroup label="Myotis">
+  <option value="Myotis aurascens">Myotis aurascens</option>
+  <option value="Myotis brandtii">Myotis brandtii</option>
+  <option value="Myotis davidii">Myotis davidii</option>
+  <option value="Myotis nattereri">Myotis nattereri</option>
+  <option value="Myotis petax">Myotis petax</option>
+  <option value="Myotis sibiricus">Myotis sibiricus</option>
+  </optgroup>
+  <optgroup label="Neomys">
+    <option value="Neomys fodiens">Neomys fodiens</option>
+  </optgroup>
+  <optgroup label="Nothocricetulus">
+    <option value="Nothocricetulus migratorius">Nothocricetulus migratorius</option>
+  </optgroup>
+  <optgroup label="Ochotona">
+    <option value="Ochotona alpina">Ochotona alpina</option>
+    <option value="Ochotona dauurica">Ochotona dauurica</option>
+    <option value="Ochotona hoffmanni">Ochotona hoffmanni</option>
+    <option value="Ochotona hyperborea">Ochotona hyperborea</option>
+    <option value="Ochotona pallasi">Ochotona pallasi</option>
+    </optgroup>
+    <optgroup label="Ondatra">
+      <option value="Ondatra zibethicus">Ondatra zibethicus</option>
+    </optgroup>
+    <optgroup label="Orientallactaga">
+      <option value="Orientallactaga balikunica">Orientallactaga balikunica</option>
+      <option value="Orientallactaga bullata">Orientallactaga bullata</option>
+      <option value="Orientallactaga sibirica">Orientallactaga sibirica</option>
+    </optgroup>
+    <optgroup label="Ovis">
+      <option value="Ovis ammon">Ovis ammon</option>
+      <option value="Ovis aries">Ovis aries</option>
+    </optgroup>
+    <optgroup label="Phodopus">
+      <option value="Phodopus campbelli">Phodopus campbelli</option>
+      <option value="Phodopus roborovskii">Phodopus roborovskii</option>
+    </optgroup>
+    <optgroup label="Plecotus">
+      <option value="Plecotus kozlovi">Plecotus kozlovi</option>
+      <option value="Plecotus ognevi">Plecotus ognevi</option>
+    </optgroup>
+    <optgroup label="Pygeretmus">
+      <option value="Pygeretmus pumilio">Pygeretmus pumilio</option>
+    </optgroup>
+    <optgroup label="Rattus">
+      <option value="Rattus norvegicus">Rattus norvegicus</option>
+    </optgroup>
+    <optgroup label="Rhombomys">
+      <option value="Rhombomys opimus">Rhombomys opimus</option>
+    </optgroup>
+    <optgroup label="Salpingotus">
+      <option value="Salpingotus crassicauda">Salpingotus crassicauda</option>
+      <option value="Salpingotus kozlovi">Salpingotus kozlovi</option>
+    </optgroup>
+    <optgroup label="Sciurus">
+      <option value="Sciurus vulgaris">Sciurus vulgaris</option>
+    </optgroup>
+    <optgroup label="Sorex">
+      <option value="Sorex araneus">Sorex araneus</option>
+      <option value="Sorex caecutiens">Sorex caecutiens</option>
+      <option value="Sorex daphaenodon">Sorex daphaenodon</option>
+      <option value="Sorex isodon">Sorex isodon</option>
+      <option value="Sorex minutissimus">Sorex minutissimus</option>
+      <option value="Sorex roboratus">Sorex roboratus</option>
+      <option value="Sorex tundrensis">Sorex tundrensis</option>
+      </optgroup>
+    <optgroup label="Spermophilus">
+      <option value="Spermophilus alashanicus">Spermophilus alashanicus</option>
+      <option value="Spermophilus dauricus">Spermophilus dauricus</option>
+      <option value="Spermophilus pallidicauda">Spermophilus pallidicauda</option>
+    </optgroup>
+    <optgroup label="Stenocranius">
+      <option value="Stenocranius gregalis">Stenocranius gregalis</option>
+    </optgroup>
+    <optgroup label="Stylodipus">
+      <option value="Stylodipus andrewsi">Stylodipus andrewsi</option>
+      <option value="Stylodipus sungorus">Stylodipus sungorus</option>
+    </optgroup>
+    <optgroup label="Urocitellus">
+      <option value="Urocitellus undulatus">Urocitellus undulatus</option>
+    </optgroup>
+    <optgroup label="Vespertilio">
+      <option value="Vespertilio murinus">Vespertilio murinus</option>
+    </optgroup>
+    <optgroup label="Vulpes">
+      <option value="Vulpes corsac">Vulpes corsac</option>
+      <option value="Vulpes vulpes">Vulpes vulpes</option>
+    </optgroup>
+  </select>
   </div>
 
   
@@ -434,8 +668,8 @@
   <em>Clethrionomys</em>
 </td>
 <td>
-  <div id="Clethrionomysrufocanus"></div>
-  <em>Clethrionomys rufocanus</em>
+  <div id="Craseomysrufocanus"></div>
+  <em>Craseomys rufocanus</em>
 </td>
 </tr>
 <tr>
@@ -464,8 +698,8 @@
   <em>Cricetulus longicaudatus cf.</em>
 </td>
 <td>
-  <div id="Cricetulusmigratorius"></div>
-  <em>Cricetulus migratorius</em>
+  <div id="Nothocricetulusmigratorius"></div>
+  <em>Nothocricetulus migratorius</em>
 </td>
 <td>
   <div id="Cricetulussokolovi"></div>
@@ -608,49 +842,49 @@
 </tr>
 <tr>
 <td>
-  <div id="Microtusfortis"></div>
-  <em>Microtus fortis</em>
+  <div id="Alexandromysfortis"></div>
+  <em>Alexandromys fortis</em>
 </td>
 <td>
-  <div id="Microtusfortiscf"></div>
-  <em>Microtus fortis cf.</em>
+  <div id="Alexandromysfortiscf"></div>
+  <em>Alexandromys fortis cf.</em>
 </td>
 <td>
-  <div id="Microtusgregalis"></div>
-  <em>Microtus gregalis</em>
+  <div id="Stenocraniusgregalis"></div>
+  <em>Stenocranius gregalis</em>
 </td>
 <td>
-  <div id="Microtusgregaliscf"></div>
-  <em>Microtus gregalis cf.</em>
+  <div id="Stenocraniusgregaliscf"></div>
+  <em>Stenocranius gregalis cf.</em>
 <td>
-  <div id="Microtuslimnophilus"></div>
-  <em>Microtus limnophilus</em>
+  <div id="Alexandromyslimnophilus"></div>
+  <em>Alexandromys limnophilus</em>
 </td>
 <td>
-  <div id="Microtusmaximowiczii"></div>
-  <em>Microtus maximowiczii</em>
+  <div id="Alexandromysmaximowiczii"></div>
+  <em>Alexandromys maximowiczii</em>
 </td>
 <td>
-  <div id="Microtusmaximowicziicf"></div>
-  <em>Microtus maximowiczii cf.</em>
+  <div id="Alexandromysmaximowicziicf"></div>
+  <em>Alexandromys maximowiczii cf.</em>
 </td>
 <td>
-  <div id="Microtusmongolicus"></div>
-  <em>Microtus mongolicus</em>
+  <div id="Alexandromysmongolicus"></div>
+  <em>Alexandromys mongolicus</em>
 </td>
 <td>
-  <div id="Microtusmongolicuscf"></div>
-  <em>Microtus mongolicus cf.</em>
+  <div id="Alexandromysmongolicuscf"></div>
+  <em>Alexandromys mongolicus cf.</em>
 </td>
 <td>
-  <div id="Microtusoeconomus"></div>
-  <em>Microtus oeconomus</em>
+  <div id="Alexandromysoeconomus"></div>
+  <em>Alexandromys oeconomus</em>
 </td>
 </tr>
 <tr>
 <td>
-  <div id="Microtusoeconomuscf"></div>
-  <em>Microtus oeconomus cf.</em>
+  <div id="Alexandromysoeconomuscf"></div>
+  <em>Alexandromys oeconomus cf.</em>
 </td>
 <td>
   <div id="Mus"></div>
@@ -749,7 +983,7 @@
   <em>Orientallactaga</em>
 </td>
 <td>
-  <div id="Oreintallactagabalikunica"></div>
+  <div id="Orientallactagabalikunica"></div>
   <em>Orientallactaga balikunica</em>
 </td>
 <td>
