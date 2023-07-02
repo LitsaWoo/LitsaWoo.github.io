@@ -175,7 +175,7 @@ fetch("Species/MongoliaSpecies.geojson")
         return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(53, 171, 4)"}; // orange with green outline
       case "Eptesicus gobiensis":
         return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(0, 206, 162)"}; // orange with teal outline
-      case "Eptesicus nilssoni":
+      case "Eptesicus nilssonii":
         return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(103, 19, 215)"}; // orange with purple outline
       case "Eptesicus serotinus":
         return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(186, 19, 215)"}; // orange with pink outline
@@ -185,7 +185,7 @@ fetch("Species/MongoliaSpecies.geojson")
         return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(0, 0, 0)"}; // orange with black outline
       case "Eutamias sibiricus":
         return {color: "rgba(0, 18, 204, 1.0)", stroke: "rgba(0, 0, 0)"}; // dark blue with black outline
-      case "Gazella subguttorosa":
+      case "Gazella subgutturosa":
         return {color: "rgba(247, 255, 1, 1.0)", stroke: "rgba(247, 255, 1)"}; // yellow
       case "Hemiechinus auritus":
         return {color: "rgba(247, 255, 1, 1.0)", stroke: "rgba(0, 0, 0)"}; // yellow with black outline
@@ -285,7 +285,7 @@ fetch("Species/MongoliaSpecies.geojson")
         return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(0, 18, 204)"}; // white with dark blue outline
       case "Ochotona hyperborea":
         return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(53, 171, 4)"}; // white with green outline
-      case "Ochotona pallasi":
+      case "Ochotona pallasii":
         return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(0, 206, 162)"}; // white with teal outline
       case "Ondatra zibethicus":
         return {color: "rgba((255, 255, 255, 1.0)", stroke: "rgba(103, 19, 215)"}; // white with purple outline
@@ -572,7 +572,7 @@ function getColor(SCI_NAME) {
       return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(53, 171, 4)"}; // orange with green outline
     case "Eptesicus gobiensis":
       return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(0, 206, 162)"}; // orange with teal outline
-    case "Eptesicus nilssoni":
+    case "Eptesicus nilssonii":
       return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(103, 19, 215)"}; // orange with purple outline
     case "Eptesicus serotinus":
       return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(186, 19, 215)"}; // orange with pink outline
@@ -582,7 +582,7 @@ function getColor(SCI_NAME) {
       return {color: "rgba(229, 132, 0, 1.0)", stroke: "rgba(0, 0, 0)"}; // orange with black outline
     case "Eutamias sibiricus":
       return {color: "rgba(0, 18, 204, 1.0)", stroke: "rgba(0, 0, 0)"}; // dark blue with black outline
-    case "Gazella subguttorosa":
+    case "Gazella subgutturosa":
       return {color: "rgba(247, 255, 1, 1.0)", stroke: "rgba(247, 255, 1)"}; // yellow
     case "Hemiechinus auritus":
       return {color: "rgba(247, 255, 1, 1.0)", stroke: "rgba(0, 0, 0)"}; // yellow with black outline
@@ -682,7 +682,7 @@ function getColor(SCI_NAME) {
       return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(0, 18, 204)"}; // white with dark blue outline
     case "Ochotona hyperborea":
       return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(53, 171, 4)"}; // white with green outline
-    case "Ochotona pallasi":
+    case "Ochotona pallasii":
       return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(0, 206, 162)"}; // white with teal outline
     case "Ondatra zibethicus":
       return {color: "rgba((255, 255, 255, 1.0)", stroke: "rgba(103, 19, 215)"}; // white with purple outline
