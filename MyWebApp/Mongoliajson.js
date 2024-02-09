@@ -28,7 +28,7 @@ var Esri_WorldImagery = L.layerGroup([L.tileLayer('https://server.arcgisonline.c
     maxZoom: 20,
     ext: 'png',
   })]).addTo(map);
-  controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
+  controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap")
   
   
   //dark outline map
