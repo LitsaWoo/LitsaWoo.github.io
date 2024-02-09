@@ -20,7 +20,7 @@
 var Esri_WorldImagery = L.layerGroup([L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: false,
     
-  }).addTo(map)
+  }).addTo(map);
   controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap")
   
   
