@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Mammals of Mongolia</title>
+
+  <meta charset="UTF-8">
   <!--Libraries-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
@@ -50,18 +52,20 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h3>About</h3>
-        <p>This map was designed with the goal to summarize
-          the Museum of Southwestern Biology's efforts to capture mammals
-          and their associated parts in the country of Mongolia. This map can
-          currently be filtered by year and by species. It is available to any
-          user but is intended to inform and connect the citizens of Mongolia to the research that
-          is done on their land. This map aims to make available
-          information that is often difficult to access in a interactive and educational format.
+        <p  id="aboutContent">This map is intended to display the Museum of Southwestern Biology's efforts of holistic mammal collection on Mongolia. 
+          Funded by the National Science Foundation, the Steppe Parasite Networks Project focuses on the mammals and parasites of Central Asia. 
+          This project would not be possible without the efforts of multiple principal investigators, students, and volunteers throughout the United States and especially, Mongolia.
+          <br><br>
+          The Arctos database is the source of the specimen information displayed on this map. 
+          With the goal of accessibility, this webpage can be displayed in English and Mongolian.
+          <br><br>
+          This map can display mammal species, their ranges, and their associated parasites. 
+          The available collections will range from 1999 to the most recent trip to Mongolia in 2022.
         </p>
       <h3>Creators</h3>
         <p><strong>Creator: </strong><a class="link" href="https://litsawoo.github.io/" target="_blank">Litsa Wooten</a> (wootenl@unm.edu) 
           <br>
-          <strong>Project Advisor: </strong><a class="link" href="https://www.lipingyang.org/" target="_blank">Liping Yang</a> (lipingyang@unm.edu)
+          <strong>Initial Advisor: </strong><a class="link" href="https://www.lipingyang.org/" target="_blank">Liping Yang</a> (lipingyang@unm.edu)
         </p>
 
       <h3>Acknowledgements</h3>
@@ -77,8 +81,6 @@
             <br>
             <a class="link" href="https://www.codexworld.com/multi-select-dropdown-list-with-checkbox-jquery/" target="_blank">Multiselect Dropdown Menu</a>
             <br>
-            <a class="link" href="https://unmcop.unm.edu/metals/#" target="_blank">Legend</a>
-            <br>
             <a class="link" href="http://leaflet-extras.github.io/leaflet-providers/preview/" target="_blank">Map Base Layers</a>
         </p>
     </div>
@@ -88,7 +90,21 @@
 
 <!--Search Bar-->
 <div id="searchbar">
-  <h3 class="Titles">Species Selector</h3>
+  <button class="button" id="LangButtEng">English</button>
+  
+  <button class="button" lang="mn" id="LangButtMong" onclick="navigateToPage('MongoliaSpeciesLang.html')">Монгол</button>
+  <br>
+  <button class="button" id="toggle" style="
+  background-color: rgb(237, 237, 237);
+  color: black;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  left: 25%;
+  margin-top: 5%;
+">Toggle Cluster</button>
+  <h3 class="Titles">Mammal Selector</h3>
   <p class="instruction">Use the dropdown menu <br>
     to add species to the map</p>
   <select name="Species[]" multiple id="Species" id="species">
@@ -111,7 +127,6 @@
         <option value="Alticola barakshin">Alticola barakshin</option>
         <option value="Alticola semicanus">Alticola semicanus</option>
         <option value="Alticola strelzowi">Alticola strelzowi</option>
-        <option value="Alticola tuvinicus">Alticola tuvinicus</option>
         <option value="Alticola tuvinicus cf.">Alticola tuvinicus cf.</option>
     </optgroup>
     <optgroup label="Apodemus">
@@ -120,15 +135,15 @@
         <option value="Apodemus peninsulae">Apodemus peninsulae</option>
         <option value="Apodemus uralensis">Apodemus uralensis</option>
     </optgroup>
+    <optgroup label="Arvicola">
+      <option value="Arvicola amphibius">Arvicola amphibius</option>
+    </optgroup>
     <optgroup label="Bos">
         <option value="Bos grunniens">Bos grunniens</option>
     </optgroup>
     <optgroup label="Camelus">
       <option value="Camelus bactrianus">Camelus bactrianus</option>
   </optgroup>
-  <optgroup label="Canis">
-    <option value="Canis lupus">Canis lupus</option>
-</optgroup>
 <optgroup label="Capra">
   <option value="Capra hircus">Capra hircus</option>
 </optgroup>
@@ -137,19 +152,26 @@
 </optgroup>
 <optgroup label="Cervus">
   <option value="Cervus canadensis">Cervus canadensis</option>
-  <option value="Cervus elaphus">Cervus elaphus</option>
 </optgroup>
 <optgroup label="Clethrionomys">
   <option value="Clethrionomys">Clethrionomys</option>
   <option value="Clethrionomys rutilus">Clethrionomys rutilus</option>
   <option value="Clethrionomys rutilus cf.">Clethrionomys rutilus cf.</option>
 </optgroup>
+<optgroup label="Cnephaeus">
+  <option value="Cnephaeus">Cnephaeus</option>
+  <option value="Cnephaeus gobiensis">Cnephaeus gobiensis</option>
+  <option value="Cnephaeus nilssonii">Cnephaeus nilssonii</option>
+  <option value="Cnephaeus serotinus">Cnephaeus serotinus</option>
+</optgroup>
 <optgroup label="Craseomys">
   <option value="Craseomys rufocanus">Craseomys rufocanus</option>
+  <option value="Craseomys rufocanus cf.">Craseomys rufocanus cf.</option>
 </optgroup>
 <optgroup label="Cricetulus">
   <option value="Cricetulus">Cricetulus</option>
   <option value="Cricetulus barabensis">Cricetulus barabensis</option>
+  <option value="Cricetulus barabensis cf.">Cricetulus barabensis cf.</option>
   <option value="Cricetulus longicaudatus">Cricetulus longicaudatus</option>
   <option value="Cricetulus longicaudatus cf.">Cricetulus longicaudatus cf.</option>
   <option value="Cricetulus sokolovi">Cricetulus sokolovi</option>
@@ -169,12 +191,6 @@
 </optgroup>
 <optgroup label="Eolagurus">
   <option value="Eolagurus luteus">Eolagurus luteus</option>
-</optgroup>
-<optgroup label="Eptesicus">
-  <option value="Eptesicus">Eptesicus</option>
-  <option value="Eptesicus gobiensis">Eptesicus gobiensis</option>
-  <option value="Eptesicus nilssonii">Eptesicus nilssonii</option>
-  <option value="Eptesicus serotinus">Eptesicus serotinus</option>
 </optgroup>
 <optgroup label="Equus">
   <option value="Equus hemionus">Equus hemionus</option>
@@ -220,6 +236,9 @@
   <option value="Meriones tamariscinus">Meriones tamariscinus</option>
   <option value="Meriones unguiculatus">Meriones unguiculatus</option>
 </optgroup>
+<optgroup label="Mesechinus">
+  <option value="Mesechinus dauuricus">Mesechinus dauuricus</option>
+</optgroup>
 <optgroup label="Microtus">
   <option value="Microtus">Microtus</option>
   <option value="Microtus arvalis">Microtus arvalis</option>
@@ -231,6 +250,7 @@
 <optgroup label="Mustela">
   <option value="Mustela altaica">Mustela altaica</option>
   <option value="Mustela erminea">Mustela erminea</option>
+  <option value="Mustela eversmanii">Mustela eversmanii</option>
   <option value="Mustela nivalis">Mustela nivalis</option>
 </optgroup>
 <optgroup label="Myopus">
@@ -241,7 +261,7 @@
   <option value="Myospalax psilurus">Myospalax psilurus</option>
 </optgroup>
 <optgroup label="Myotis">
-  <option value="Myotis aurascens">Myotis aurascens</option>
+  <option value="Myotis">Myotis</option>
   <option value="Myotis brandtii">Myotis brandtii</option>
   <option value="Myotis davidii">Myotis davidii</option>
   <option value="Myotis nattereri">Myotis nattereri</option>
@@ -338,19 +358,8 @@
       <option value="Vulpes vulpes">Vulpes vulpes</option>
     </optgroup>
 </select>
-<button id="toggle" style="
-  background-color: rgb(237, 237, 237);
-  color: black;
-  font-size: 14px;
-  border: none;
-  border-radius: 10px;
-  position: relative;
-  left: 15%;
-  margin-top: 5%;
-">Toggle Cluster</button>
 <br>
-<br>
-<h3 class="Titles">Range Maps</h3>
+<h3 class="Titles">Mammal Range Maps</h3>
 <p class="instruction">Use the dropdown menu to add <br>
   a species range to the map</p>
   <select name="Range[]" multiple id="range" id="range">
@@ -378,18 +387,19 @@
     <optgroup label="Camelus">
       <option value="Camelus bactrianus">Camelus bactrianus</option>
   </optgroup>
-  <optgroup label="Canis">
-    <option value="Canis lupus">Canis lupus</option>
-</optgroup>
 <optgroup label="Cardiocranius">
   <option value="Cardiocranius paradoxus">Cardiocranius paradoxus</option>
 </optgroup>
 <optgroup label="Cervus">
   <option value="Cervus canadensis">Cervus canadensis</option>
-  <option value="Cervus elaphus">Cervus elaphus</option>
 </optgroup>
 <optgroup label="Clethrionomys">
   <option value="Clethrionomys rutilus">Clethrionomys rutilus</option>
+</optgroup>
+<optgroup label="Cnephaeus">
+  <option value="Cnephaeus gobiensis">Cnephaeus gobiensis</option>
+  <option value="Cnephaeus nilssonii">Cnephaeus nilssonii</option>
+  <option value="Cnephaeus serotinus">Cnephaeus serotinus</option>
 </optgroup>
 <optgroup label="Craseomys">
   <option value="Craseomys rufocanus">Craseomys rufocanus</option>
@@ -414,11 +424,6 @@
 </optgroup>
 <optgroup label="Eolagurus">
   <option value="Eolagurus luteus">Eolagurus luteus</option>
-</optgroup>
-<optgroup label="Eptesicus">
-  <option value="Eptesicus gobiensis">Eptesicus gobiensis</option>
-  <option value="Eptesicus nilssonii">Eptesicus nilssonii</option>
-  <option value="Eptesicus serotinus">Eptesicus serotinus</option>
 </optgroup>
 <optgroup label="Equus">
   <option value="Equus hemionus">Equus hemionus</option>
@@ -481,7 +486,6 @@
   <option value="Myospalax psilurus">Myospalax psilurus</option>
 </optgroup>
 <optgroup label="Myotis">
-  <option value="Myotis aurascens">Myotis aurascens</option>
   <option value="Myotis brandtii">Myotis brandtii</option>
   <option value="Myotis davidii">Myotis davidii</option>
   <option value="Myotis nattereri">Myotis nattereri</option>
@@ -568,6 +572,46 @@
       <option value="Vulpes vulpes">Vulpes vulpes</option>
     </optgroup>
   </select>
+  <br>
+<h3 class="Titles">Ectoparasite Selector</h3>
+<p class="instruction">Use the dropdown menu to add <br>
+  a ectoparasites to the map</p>
+  <select name="Parasites[]" multiple id="Ectoparasites" id="Ectoparasites">
+    <optgroup label="Ectoparasites">
+      <option value="Yes">Unidentified</option>
+      <option value="Arthropoda">Arthropoda</option>
+        <optgroup label="Flies">
+          <option value="Diptera">Diptera</option>
+        </optgroup>
+        <optgroup label="Ticks and Mites">
+          <option value="Acari">Acari</option>
+          <option value="Ixodida">Ixodida</option>
+        </optgroup>
+        <optgroup label="Fleas">
+          <option value="Siphonaptera">Siphonaptera</option>
+        </optgroup>
+        <optgroup label="Lice">
+          <option value="Phthiraptera">Phthiraptera</option>
+        </optgroup>
+    </optgroup>
+    </select>
+    <br>
+    <h3 class="Titles">Endoparasite Selector</h3>
+<p class="instruction">Use the dropdown menu to add <br>
+  a endoparasites to the map</p>
+  <select name="Parasites[]" multiple id="Endoparasites" id="Endoparasites">
+    <optgroup label="Endoparasites">
+          <option value="Yes">Unidentified</option>
+        </optgroup>
+    <optgroup label="Nematodes">
+          <option value="Rhabditida">Rhabditida</option>
+          <option value="Strongylida">Strongylida</option>
+          <option value="Oxyurida">Oxyurida</option>
+        <optgroup label="Cestodes">
+          <option value="Cyclophyllidea">Cyclophyllidea</option>
+        </optgroup>
+    </optgroup>
+    </select>
   </div>
 
   
@@ -583,546 +627,70 @@
   <table>
     <tr>
  <td>
-  <span id="Allocricetuluscurtatus"></span>
-  <em>Allocricetulus curtatus</em>
+  <span id="Bovidae"></span>
+  <em>Bovidae</em>
 </td> 
 <td>
-  <span id="Alticola"></span>
-  <em>Alticola</em>
+  <span id="Camelidae"></span>
+  <em>Camelidae</em>
 </td>
 <td>
-<div id="Alticolabarakshin"></div>
-  <em>Alticola barakshin</em>
+<div id="Canidae"></div>
+  <em>Canidae</em>
 </td>
 <td>
-  <div id="Alticolasemicanus"></div>
-  <em>Alticola semicanus</em>
+  <div id="Cervidae"></div>
+  <em>Cervidae</em>
 </td>
 <td>
-  <div id="Alticolastrelzowi"></div>
-  <em>Alticola strelzowi</em>
+  <div id="Cricetidae"></div>
+  <em>Cricetidae</em>
 </td>
 <td>
-  <div id="Alticolatuvinicus"></div>
-  <em>Alticola tuvinicus</em>
+  <div id="Dipodidae"></div>
+  <em>Dipodidae</em>
 </td>
 <td>
-  <div id="Alticolatuvinicuscf"></div>
-  <em>Alticola tuvinicus cf.</em>
+  <div id="Equidae"></div>
+  <em>Equidae</em>
 </td>
 <td>
-  <div id="Apodemus"></div>
-  <em>Apodemus</em>
-</td>
-<td>
-  <div id="Apodemusagrarius"></div>
-  <em>Apodemus agrarius</em>
-</td>
-<td>
-  <div id="Apodemuspeninsulae"></div>
-  <em>Apodemus peninsulae</em>
+  <div id="Erinaceidae"></div>
+  <em>Erinaceidae</em>
 </td>
 </tr>
 <tr>
 <td>
-  <div id="Apodemusuralensis"></div>
-  <em>Apodemus uralensis</em>
+  <div id="Gliridae"></div>
+  <em>Gliridae</em>
 </td>
 <td>
-  <div id="Bosgrunniens"></div>
-  <em>Bos grunniens</em>
+  <div id="Leporidae"></div>
+  <em>Leporidae</em>
 </td>
 <td>
-  <div id="Camelusbactrianus"></div>
-  <em>Camelus bactrianus</em>
+  <div id="Muridae"></div>
+  <em>Muridae</em>
 </td>
 <td>
-  <div id="Canislupus"></div>
-  <em>Canis lupus</em>
+  <div id="Mustelidae"></div>
+  <em>Mustelidae</em>
 </td>
 <td>
-  <div id="Caprahircus"></div>
-  <em>Capra hircus</em>
+  <div id="Ochotonidae"></div>
+  <em>Ochotonidae</em>
 </td>
 <td>
-  <div id="Cardiocraniusparadoxus"></div>
-  <em>Cardiocranius paradoxus</em>
+  <div id="Sciuridae"></div>
+  <em>Sciuridae</em>
 </td>
 <td>
-  <div id="Cervuscanadensis"></div>
-  <em>Cervus canadensis</em>
+  <div id="Spalacidae"></div>
+  <em>Spalacidae</em>
 </td>
 <td>
-  <div id="Cervuselaphus"></div>
-  <em>Cervus elaphus</em>
-</td>
-<td>
-  <div id="Clethrionomys"></div>
-  <em>Clethrionomys</em>
-</td>
-<td>
-  <div id="Craseomysrufocanus"></div>
-  <em>Craseomys rufocanus</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Clethrionomysrutilus"></div>
-  <em>Clethrionomys rutilus</em>
-</td>
-<td>
-  <div id="Clethrionomysrutiluscf"></div>
-  <em>Clethrionomys rutilus cf.</em>
-</td>
-<td>
-  <div id="Cricetulus"></div>
-  <em>Cricetulus</em>
-</td>
-<td>
-  <div id="Cricetulusbarabensis"></div>
-  <em>Cricetulus barabensis</em>
-</td>
-<td>
-  <div id="Cricetuluslongicaudatus"></div>
-  <em>Cricetulus longicaudatus</em>
-</td>
-<td>
-  <div id="Cricetuluslongicaudatuscf"></div>
-  <em>Cricetulus longicaudatus cf.</em>
-</td>
-<td>
-  <div id="Nothocricetulusmigratorius"></div>
-  <em>Nothocricetulus migratorius</em>
-</td>
-<td>
-  <div id="Cricetulussokolovi"></div>
-  <em>Cricetulus sokolovi</em>
-</td>
-<td>
-  <div id="Crocidurashantungensis"></div>
-  <em>Crocidura shantungensis</em>
-</td>
-<td>
-  <div id="Crocidurasuaveolens"></div>
-  <em>Crocidura suaveolens</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Dipussagitta"></div>
-  <em>Dipus sagitta</em>
-</td>
-<td>
-  <div id="Dryomysnitedula"></div>
-  <em>Dryomys nitedula</em>
-</td>
-<td>
-  <div id="Ellobiustancrei"></div>
-  <em>Ellobius tancrei</em>
-</td>
-<td>
-  <div id="Eolagurusluteus"></div>
-  <em>Eolagurus luteus</em>
-</td>
-<td>
-  <div id="Eptesicus"></div>
-  <em>Eptesicus</em>
-</td>
-<td>
-  <div id="Eptesicusgobiensis"></div>
-  <em>Eptesicus gobiensis</em>
-</td>
-<td>
-  <div id="Eptesicusnilssonii"></div>
-  <em>Eptesicus nilssonii</em>
-</td>
-<td>
-  <div id="Eptesicusserotinus"></div>
-  <em>Eptesicus serotinus</em>
-</td>
-<td>
-  <div id="Equushemionus"></div>
-  <em>Equus hemionus</em>
-</td>
-<td>
-  <div id="Euchoreutesnaso"></div>
-  <em>Euchoreutes naso</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Eutamiassibiricus"></div>
-  <em>Eutamias sibiricus</em>
-</td>
-<td>
-  <div id="Gazellasubgutturosa"></div>
-  <em>Gazella subgutturosa</em>
-</td>
-<td>
-  <div id="Hemiechinusauritus"></div>
-  <em>Hemiechinus auritus</em>
-</td>
-<td>
-  <div id="Hypsugoalaschanicus"></div>
-  <em>Hypsugo alaschanicus</em>
-</td>
-<td>
-  <div id="Lasiopodomysbrandtii"></div>
-  <em>Lasiopodomys brandtii</em>
-</td>
-<td>
-  <div id="Lasiopodomysmandarinus"></div>
-  <em>Lasiopodomys mandarinus</em>
-</td>
-<td>
-  <div id="Lepustimidus"></div>
-  <em>Lepus timidus</em>
-</td>
-<td>
-  <div id="Lepustolai"></div>
-  <em>Lepus tolai</em>
-</td>
-<td>
-  <div id="Marmota"></div>
-  <em>Marmota</em>
-</td>
-<td>
-  <div id="Marmotabaibacina"></div>
-  <em>Marmota baibacina</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Marmotasibirica"></div>
-  <em>Marmota sibirica</em>
-</td>
-<td>
-  <div id="Martesfoina"></div>
-  <em>Martes foina</em>
-</td>
-<td>
-  <div id="Melesleucurus"></div>
-  <em>Meles leucurus</em>
-</td>
-<td>
-  <div id="Melesmeles"></div>
-  <em>Meles meles</em>
-</td>
-<td>
-  <div id="Meriones"></div>
-  <em>Meriones</em>
-</td>
-<td>
-  <div id="Merionesmeridianus"></div>
-  <em>Meriones meridianus</em>
-</td>
-<td>
-  <div id="Merionestamarscinus"></div>
-  <em>Meriones tamariscinus</em>
-</td>
-<td>
-  <div id="Merionesunguiculatus"></div>
-  <em>Meriones unguiculatus</em>
-</td>
-<td>
-  <div id="Microtus"></div>
-  <em>Microtus</em>
-</td>
-<td>
-  <div id="Microtusarvalis"></div>
-  <em>Microtus arvalis</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Alexandromysfortis"></div>
-  <em>Alexandromys fortis</em>
-</td>
-<td>
-  <div id="Alexandromysfortiscf"></div>
-  <em>Alexandromys fortis cf.</em>
-</td>
-<td>
-  <div id="Stenocraniusgregalis"></div>
-  <em>Stenocranius gregalis</em>
-</td>
-<td>
-  <div id="Stenocraniusgregaliscf"></div>
-  <em>Stenocranius gregalis cf.</em>
-<td>
-  <div id="Alexandromyslimnophilus"></div>
-  <em>Alexandromys limnophilus</em>
-</td>
-<td>
-  <div id="Alexandromysmaximowiczii"></div>
-  <em>Alexandromys maximowiczii</em>
-</td>
-<td>
-  <div id="Alexandromysmaximowicziicf"></div>
-  <em>Alexandromys maximowiczii cf.</em>
-</td>
-<td>
-  <div id="Alexandromysmongolicus"></div>
-  <em>Alexandromys mongolicus</em>
-</td>
-<td>
-  <div id="Alexandromysmongolicuscf"></div>
-  <em>Alexandromys mongolicus cf.</em>
-</td>
-<td>
-  <div id="Alexandromysoeconomus"></div>
-  <em>Alexandromys oeconomus</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Alexandromysoeconomuscf"></div>
-  <em>Alexandromys oeconomus cf.</em>
-</td>
-<td>
-  <div id="Mus"></div>
-  <em>Mus</em>
-</td>
-<td>
-  <div id="Musmusculus"></div>
-  <em>Mus musculus</em>
-</td>
-<td>
-  <div id="Mustelaaltaica"></div>
-  <em>Mustela altaica</em>
-</td>
-<td>
-  <div id="Mustelaerminea"></div>
-  <em>Mustela erminea</em>
-</td>
-<td>
-  <div id="Mustelanivalis"></div>
-  <em>Mustela nivalis</em>
-</td>
-<td>
-  <div id="Myopusschisticolor"></div>
-  <em>Myopus schisticolor</em>
-</td>
-<td>
-  <div id="Myospalaxaspalax"></div>
-  <em>Myospalax aspalax</em>
-</td>
-<td>
-  <div id="Myospalaxpsilurus"></div>
-  <em>Myospalax psilurus</em>
-</td>
-<td>
-  <div id="Myotisaurascens"></div>
-  <em>Myotis aurascens</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Myotisbrandtii"></div>
-  <em>Myotis brandtii</em>
-</td>
-<td>
-  <div id="Myotisdavidii"></div>
-  <em>Myotis davidii</em>
-</td>
-<td>
-  <div id="Myotisnattereri"></div>
-  <em>Myotis nattereri</em>
-</td>
-<td>
-  <div id="Myotispetax"></div>
-  <em>Myotis petax</em>
-</td>
-<td>
-  <div id="Myotissibiricus"></div>
-  <em>Myotis sibiricus</em>
-</td>
-<td>
-  <div id="Neomysfodiens"></div>
-  <em>Neomys fodiens</em>
-</td>
-<td>
-  <div id="Ochotona"></div>
-  <em>Ochotona</em>
-</td>
-<td>
-  <div id="Ochotonaalpina"></div>
-  <em>Ochotona alpina</em>
-</td>
-<td>
-  <div id="Ochotonadauurica"></div>
-  <em>Ochotona dauurica</em>
-</td>
-<td>
-  <div id="Ochotonahoffmanni"></div>
-  <em>Ochotona hoffmanni</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Ochotonahyperborea"></div>
-  <em>Ochotona hyperborea</em>
-</td>
-<td>
-  <div id="Ochotonapallasii"></div>
-  <em>Ochotona pallasii</em>
-</td>
-<td>
-  <div id="Ondatrazibethicus"></div>
-  <em>Ondatra zibethicus</em>
-</td>
-<td>
-  <div id="Orientallactaga"></div>
-  <em>Orientallactaga</em>
-</td>
-<td>
-  <div id="Orientallactagabalikunica"></div>
-  <em>Orientallactaga balikunica</em>
-</td>
-<td>
-  <div id="Orientallactagabullata"></div>
-  <em>Orientallactaga bullata</em>
-</td>
-<td>
-  <div id="Orientallactagasibirica"></div>
-  <em>Orientallactaga sibirica</em>
-</td>
-<td>
-  <div id="Ovisammon"></div>
-  <em>Ovis ammon</em>
-</td>
-<td>
-  <div id="Ovisaries"></div>
-  <em>Ovis aries</em>
-</td>
-<td>
-  <div id="Phodopus"></div>
-  <em>Phodopus</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Phodopuscampbelli"></div>
-  <em>Phodopus campbelli</em>
-</td>
-<td>
-  <div id="Phodopusrborovskii"></div>
-  <em>Phodopus roborovskii</em>
-</td>
-<td>
-  <div id="Plecotuskozlovi"></div>
-  <em>Plectous kozlovi</em>
-</td>
-<td>
-  <div id="Plecotusognevi"></div>
-  <em>Plecotus ognevi</em>
-</td>
-<td>
-  <div id="Pygeretmuspumilio"></div>
-  <em>Pygeretmus pumilio</em>
-</td>
-<td>
-  <div id="Rattusnorvegicus"></div>
-  <em>Rattus norvegicus</em>
-</td>
-<td>
-  <div id="Rhombomysopimus"></div>
-  <em>Rhombomys opimus</em>
-</td>
-<td>
-  <div id="Salpingotuscrassicauda"></div>
-  <em>Salpingotus crassicauda</em>
-</td>
-<td>
-  <div id="Salpingotuskozlovi"></div>
-  <em>Salpingotus kozlovi</em>
-</td>
-<td>
-  <div id="Sciurusvulgaris"></div>
-  <em>Sciurus vulgaris</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Sorex"></div>
-  <em>Sorex</em>
-</td>
-<td>
-  <div id="Sorexcaecutiens"></div>
-  <em>Sorex caecutiens</em>
-</td>
-<td>
-  <div id="Sorexdaphaenodon"></div>
-  <em>Sorex daphaenodon</em>
-</td>
-<td>
-  <div id="Sorexisodon"></div>
-  <em>Sorex isodon</em>
-</td>
-<td>
-  <div id="Sorexminutissimus"></div>
-  <em>Sorex minutissimus</em>
-</td>
-<td>
-  <div id="Sorexroboratus"></div>
-  <em>Sorex roboratus</em>
-</td>
-<td>
-  <div id="Sorexroboratuscf"></div>
-  <em>Sorex roboratus cf.</em>
-</td>
-<td>
-  <div id="Sorextundrensis"></div>
-  <em>Sorex tundrensis</em>
-</td>
-<td>
-  <div id="Sorextundrensiscf"></div>
-  <em>Sorex tundrensis cf.</em>
-</td>
-<td>
-  <div id="Spermophilusalaschanicus"></div>
-  <em>Spermophilus alaschanicus</em>
-</td>
-</tr>
-<tr>
-<td>
-  <div id="Spermophilusdauricus"></div>
-  <em>Spermophilus dauricus</em>
-</td>
-<td>
-  <div id="Spermophiluspallidicauda"></div>
-  <em>Spermophilus pallidicauda</em>
-</td>
-<td>
-  <div id="Spermophiluspallidicaudacf"></div>
-  <em>Spermophilus pallidicauda cf.</em>
-</td>
-<td>
-  <div id="Stylodipusandrewsi"></div>
-  <em>Spermophilus andrewsi</em>
-</td>
-<td>
-  <div id="Stylodipussungorus"></div>
-  <em>Stylodipus sungorus</em>
-</td>
-<td>
-  <div id="Urocitellusundulatus"></div>
-  <em>Urocitellus undulatus</em>
-</td>
-<td>
-  <div id="Vespertilio"></div>
-  <em>Vespertilio</em>
-</td>
-<td>
-  <div id="Vespertiliomurinus"></div>
-  <em>Vespertilio murinus</em>
-</td><td>
-  <div id="Vulpescorsac"></div>
-  <em>Vulpes corsac</em>
-</td>
-<td>
-  <div id="Vulpesvulpes"></div>
-  <em>Vulpes vulpes</em>
+  <div id="Vespertilionidae"></div>
+  <em>Vespertilionidae</em>
 </td>
 </tr>
 </table>
