@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Монгол орны хөхтөн амьтан</title>
+
+  <meta charset="UTF-8">
+  <!--Libraries-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
+  <script src="JS/markercluster-src.js"></script>
+ <script src="JS/noUiSlider/nouislider.js"></script>
+  <script src="Libraries/Dropdown/multiselect_dropdown_with_checkbox_jquery/js/multiselect/jquery.multiselect.js"></script>
+  <script src="Libraries/Slide Menu/Leaflet.SlideMenu-0.4.1/src/L.Control.SlideMenu.js"></script>
+  <script src="Libraries/Legend/Leaflet.Legend-1.0.0/src/leaflet.legend.js"></script>
+  <script src="Libraries/wNumb/wnumb-1.2.0/wNumb.js"></script>
+  <script src="JS/leaflet.markercluster.freezable.js"></script>
+  
+
+  
+
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="MongoliaStyles.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/> 
+  <link type="text/css" href="Libraries/Leaflet.markercluster/Markercluster.leaflet/dist/MarkerCluster.css" rel="stylesheet"/>
+  <link type="text/css" href="Libraries/Leaflet.markercluster/Markercluster.leaflet/dist/MarkerCluster.Default.css" rel="stylesheet" />
+  <link rel="stylesheet" href="JS/noUiSlider/nouislider.css"/>
+  <link rel="stylesheet" href="Libraries/Dropdown/multiselect_dropdown_with_checkbox_jquery/js/multiselect/jquery.multiselect.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="Libraries/Slide Menu/Leaflet.SlideMenu-0.4.1/src/L.Control.SlideMenu.css"/>
+  <link rel="stylesheet" href="Libraries/Legend/Leaflet.Legend-1.0.0/src/leaflet.legend.css"/>
+
+</head>
+<body>
+  <div id="Titles" style="height:70px;">
+    Монгол орны хөхтөн амьтан
+  </div>
+  <!--About Info-->
+  <div id="About">
+    <button id="aboutmap">Энэ газрын зургийн тухай</button>
+  </div>
+
+ 
+
+
+
+  <!-- Modal -->
+  <div class="modal-background" id="modal-background">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Тухай</h3>
+        <p  id="aboutContent">Энэхүү газрын зураг нь Баруун өмнөд биологийн музейн Монголын хөхтөн амьтны
+            цогц цуглуулгад оруулсан хүчин чармайлтыг харуулах зорилготой юм. АНУ ын Үндэсний Шинжлэх Ухааны Сангаас санхүүжүүлж буй “Тал нутгийн шимэгч
+            хорхойн сүлжээ” энэхүү төсөл нь Төв Азийн хөхтөн амьтад, тэдгээрийн шимэгч
+            хорхойн судалгаанд төвлөрөн ажилладаг. Энэхүү төслийг хэрэгжүүлэхэд Америк-Монголын төслийн удирдагч нар, тэр
+            дундаа эрдэмтэн судлаач, оюутан, сайн дурынхны хүчин чармайлтгүйгээр
+            хэрэгжүүлэх боломжгүй байсныг онцлон дурьдах нь зөв болно.
+            <br><br>
+            Arctos-ийн суурь дата нь “дээжийн” газрын зураг дээрх мэдээллийг үзүүлэх бөгөөд
+            хүртээмжтэй байлгах үүднээс энэхүү вэб хуудасыг Англи болон Монгол хэл дээр
+            харуулах юм.
+          <br><br>
+          Энэ газрын зурганд хөхтөний зүйлүүд, тэдгээрийн тархалт мөн тэдэнд байх
+            паразитуудыг үзүүлсэн ба эдгээр цуглуулгууд нь 1999 оноос эхлээд Монголд
+            хийгдсэн хамгийн сүүлийн аялал хүртэл байх болно.
+        </p>
+      <h3>Бүтээгчид</h3>
+        <p><strong>Бүтээгч: </strong><a class="link" href="https://litsawoo.github.io/" target="_blank">Лица Вутен</a> (wootenl@unm.edu) 
+          <br>
+          <strong>Анхны зөвлөх: </strong><a class="link" href="https://www.lipingyang.org/" target="_blank">Липинг Яанг</a> (lipingyang@unm.edu)
+        </p>
+
+      <h3>Талархал</h3>
+        <p> <a class="link" href="http://www.msb.unm.edu/" target="_blank">Баруун өмнөд биологийн музей</a>
+            <br>
+            <a class="link" href="https://arctos.database.museum/search.cfm" target="_blank">Arctos Database</a>
+            <br>
+            <a class="link" href="https://eve-row.github.io/MyWebApp/index.html" target="_blank">Eve Rowland and Team's Interactive Map</a>
+            <br>
+            <a class="link" href="https://maps.usgs.gov/gap-species/" target="_blank">USGS Species Viewer</a>
+            <br>
+            <a class="link" href="https://refreshless.com/nouislider/" target="_blank">Year Slider</a>
+            <br>
+            <a class="link" href="https://www.codexworld.com/multi-select-dropdown-list-with-checkbox-jquery/" target="_blank">Multiselect Dropdown Menu</a>
+            <br>
+            <a class="link" href="http://leaflet-extras.github.io/leaflet-providers/preview/" target="_blank">Map Base Layers</a>
+        </p>
+    </div>
+  </div>
+
+ 
+
+<!--Search Bar-->
+<div id="searchbar">
+  <button class="button" id="LangButtEng" onclick="navigateToPage('MongoliaSpecies.html')">English</button>
+  <button class="button" lang="mn" id="LangButtMong" style="left: 40%">Монгол</button>
+  <br>
+  <button class="button" id="toggle" style="
+  background-color: rgb(237, 237, 237);
+  color: black;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  left: 12.5%;
+  margin-top: 5%;
+">Бүлгүүдийг асаах/унтраах</button>
+  <h3 class="Titles">Хөхтөн амьтдын Сонгогч</h3>
+  <p class="instruction">Газрын зураг дээр хөхтөн амьтдын төрлийг
+    <br> нэмэхийн тулд унадаг цэсийг ашиглана уу</p>
+    <select name="Species[]" multiple id="Species" id="species">
+        <optgroup label="Зараа (Mesechinus)">
+          <option value="Mesechinus dauuricus">Дагуур зараа</option>
+        </optgroup>
+        <optgroup label="Зараа (Hemiechinus)">
+          <option value="Hemiechinus auritus">Дагуур зараа</option>
+        </optgroup>
+        <optgroup label="Хашир (Sorex)">
+            <option value="Sorex">Sorex</option>
+            <option value="Sorex araneus">Хэвдүүн атаахай</option>
+            <option value="Sorex caecutiens">Дааган атаахай</option>
+            <option value="Sorex daphaenodon">Бэсрэг атаахай</option>
+            <option value="Sorex isodon">Тэгш шүдэт атаахай</option>
+            <option value="Sorex minutissimus">Өөдсөн атаахай</option>
+            <option value="Sorex roboratus">Тавшгар атаахай</option>
+            <option value="Sorex roboratus cf.">Тавшгар атаахай cf.</option>
+            <option value="Sorex tundrensis">Цармын атаахай</option>
+            <option value="Sorex tundrensis cf.">Цармын атаахай cf.</option>
+            </optgroup>
+        <optgroup label="Хашир (Crocidura)">
+            <option value="Crocidura shantungensis">Азийн малтаахай</option>
+            <option value="Crocidura suaveolens">Нутын малтаахай</option>
+      </optgroup>
+      <optgroup label="Хашир (Neomys)">
+        <option value="Neomys fodiens">Усч гэрэлзгэнэ</option>
+      </optgroup>
+      <optgroup label="Багваахай (Vespertilio)">
+        <option value="Vespertilio">Vespertilio</option>
+        <option value="Vespertilio murinus">Буурал сармаахай</option>
+      </optgroup>
+      <optgroup label="Багваахай (Hypsugo)">
+        <option value="Hypsugo alaschanicus">Бор турсаахай</option>
+      </optgroup>
+      <optgroup label="Багваахай (Cnephaeus)">
+        <option value="Cnephaeus">Cnephaeus</option>
+        <option value="Cnephaeus gobiensis">Говийн сармаахай</option>
+        <option value="Cnephaeus nilssonii">Умарын сармаахай</option>
+        <option value="Cnephaeus serotinus">Хожуу сармаахай</option>
+      </optgroup>
+      <optgroup label="Багваахай (Myotis)">
+        <option value="Myotis">Myotis</option>
+        <option value="Myotis brandtii">Myotis brandtii</option>
+        <option value="Myotis davidii">Хээрийн сахалт багваахай</option>
+        <option value="Myotis nattereri">Myotis nattereri</option>
+        <option value="Myotis petax">Дорнодын уссаг багваахай</option>
+        <option value="Myotis sibiricus">Myotis sibiricus</option>
+        </optgroup>
+        <optgroup label="Багваахай (Plecotus)">
+          <option value="Plecotus kozlovi">Саарал соотон багваахай</option>
+          <option value="Plecotus ognevi">Бор соотон багваахай</option>
+        </optgroup>
+        <optgroup label="Туулай (Lepus)">
+            <option value="Lepus timidus">Чандага</option>
+            <option value="Lepus tolai">Бор туулай</option>
+        </optgroup>
+        <optgroup label="Огдой (Ochotona)">
+          <option value="Ochotona">Ochotona</option>
+          <option value="Ochotona alpina">Тагийн огдой</option>
+          <option value="Ochotona dauurica">Дагуур огдой</option>
+          <option value="Ochotona hoffmanni">Ochotona hoffmanni</option>
+          <option value="Ochotona hyperborea">Асганы огдой</option>
+          <option value="Ochotona pallasii">Монгол огдой</option>
+          </optgroup>
+          <optgroup label="Тарвага (Marmota)">
+            <option value="Marmota">Marmota</option>
+            <option value="Marmota baibacina">Алтайн тарвага</option>
+            <option value="Marmota sibirica">Монгол тарвага</option>
+          </optgroup>
+          <optgroup label="Газрын Хэрэм (Spermophilus)">
+            <option value="Spermophilus alashanicus">Гозоорой зурам</option>
+            <option value="Spermophilus dauricus">Дагуур зурам</option>
+            <option value="Spermophilus pallidicauda">Цайвар сүүлт зурам</option>
+            <option value="Spermophilus pallidicauda cf.">Цайвар сүүлт зурам cf.</option>
+          </optgroup>
+          <optgroup label="Газрын Хэрэм (Urocitellus)">
+            <option value="Urocitellus undulatus">Урт сүүлт зурам</option>
+          </optgroup>
+          <optgroup label="Бургас (Eutamias)">
+            <option value="Eutamias sibiricus">Жирх</option>
+          </optgroup>
+          <optgroup label="Хэрэм (Sciurus)">
+            <option value="Sciurus vulgaris">Бараан хэрэм</option>
+          </optgroup>
+          <optgroup label="Хулгана Хэрэм (Dryomys)">
+            <option value="Dryomys nitedula">Ойн унтаахай</option>
+          </optgroup>
+          <optgroup label="Номин (Myospalax)">
+            <option value="Myospalax aspalax">Дагуур номин</option>
+            <option value="Myospalax psilurus">Манжуур номин</option>
+          </optgroup>
+          <optgroup label="Оготно (Alexandromys)">
+            <option value="Alexandromys fortis">Өргөөнч оготно</option>
+            <option value="Alexandromys fortis cf.">Өргөөнч оготно cf.</option>
+            <option value="Alexandromys limnophilus">Зүлгийн оготно</option>
+            <option value="Alexandromys maximowiczii">Ширгийн оготно</option>
+            <option value="Alexandromys maximowiczii cf.">Ширгийн оготно cf.</option>
+            <option value="Alexandromys mongolicus">Монгол оготно</option>
+            <option value="Alexandromys mongolicus cf.">Монгол оготно cf.</option>
+            <option value="Alexandromys oeconomus">Мэхээрч оготно</option>
+            <option value="Alexandromys oeconomus cf.">Мэхээрч оготно cf.</option>
+          </optgroup>
+          <optgroup label="Оготно (Microtus)">
+            <option value="Microtus">Microtus</option>
+            <option value="Microtus arvalis">Бараан оготно</option>
+          </optgroup>
+          <optgroup label="Оготно (Lasiopodomys)">
+            <option value="Lasiopodomys brandtii">Үлийн цагаан оготно</option>
+            <option value="Lasiopodomys mandarinus">Үлийн Бор оготно</option>
+          </optgroup>
+          <optgroup label="Оготно (Clethrionomys)">
+            <option value="Clethrionomys">Clethrionomys</option>
+            <option value="Clethrionomys rutilus">Ойн улаан оготно</option>
+            <option value="Clethrionomys rutilus cf.">Ойн улаан оготно cf.</option>
+          </optgroup>
+          <optgroup label="Оготно (Craseomys)">
+            <option value="Craseomys rufocanus">Ойн хүрэн оготно</option>
+            <option value="Craseomys rufocanus">Ойн хүрэн оготно cf.</option>
+          </optgroup>
+          <optgroup label="Оготно (Stenocranius)">
+            <option value="Stenocranius gregalis">Хэргэлзий оготно</option>
+            <option value="Stenocranius gregalis">Хэргэлзий оготно cf.</option>
+          </optgroup>    
+        <optgroup label="Оготно (Alticola)">
+            <option value="Alticola">Alticola</option>
+            <option value="Alticola barakshin">Говь-алтайн барагчин</option>
+            <option value="Alticola semicanus">Хадны барагчин</option>
+            <option value="Alticola strelzowi">Тавшгар барагчин</option>
+            <option value="Alticola tuvinicus cf.">Тува барагчин cf.</option>
+        </optgroup>
+        <optgroup label="Оготно (Arvicola)">
+          <option value="Arvicola amphibius">Усч оготно</option>
+        </optgroup>
+        <optgroup label="Оготно (Eolagurus)">
+          <option value="Eolagurus luteus">Овын оготно</option>
+        </optgroup>
+        <optgroup label="Оготно (Myopus)">
+          <option value="Myopus schisticolor">Ойн хөвхөлжин</option>
+        </optgroup>
+        <optgroup label="Оготно (Ellobius)">
+          <option value="Ellobius tancrei">Сохдой оготно</option>
+        </optgroup>
+        <optgroup label="Заарт харх (Ondatra)">
+          <option value="Ondatra zibethicus">Заарт харх</option>
+        </optgroup>
+        <optgroup label="Шишүүхэй (Allocricetulus)">
+            <option value="Allocricetulus curtatus">Цомч шишүүхэй</option>
+        </optgroup>
+        <optgroup label="Шишүүхэй (Cricetulus)">
+          <option value="Cricetulus">Cricetulus</option>
+          <option value="Cricetulus barabensis">Хөх шишүүхэй</option>
+          <option value="Cricetulus barabensis cf.">Хөх шишүүхэй cf.</option>
+          <option value="Cricetulus longicaudatus">Сүүлэрхэг шишүүхэй</option>
+          <option value="Cricetulus longicaudatus cf.">Сүүлэрхэг шишүүхэй cf.</option>
+          <option value="Cricetulus sokolovi">Соколоьын шишүүхэй</option>
+        </optgroup>
+        <optgroup label="Шишүүхэй (Nothocricetulus)">
+          <option value="Nothocricetulus migratorius">Бор шишүүхэй</option>
+        </optgroup>
+        <optgroup label="Шишүүхэй (Phodopus)">
+          <option value="Phodopus">Phodopus</option>
+          <option value="Phodopus campbelli">Орог зураг</option>
+          <option value="Phodopus roborovskii">Элсний зусаг</option>
+        </optgroup>
+        <optgroup label="Чичүүл (Meriones)">
+          <option value="Meriones">Meriones</option>
+          <option value="Meriones meridianus">Шар чичүүл</option>
+          <option value="Meriones tamariscinus">Сухайн чичүүл</option>
+          <option value="Meriones unguiculatus">Монгол чичүүл</option>
+        </optgroup>
+        <optgroup label="Чичүүл (Rhombomys)">
+          <option value="Rhombomys opimus">Морин чичүүл</option>
+        </optgroup>
+        <optgroup label="Хулгана (Apodemus)">
+            <option value="Apodemus">Apodemus</option>
+            <option value="Apodemus agrarius">Хээрийн хулгана</option>
+            <option value="Apodemus peninsulae">Азийн хулгана</option>
+            <option value="Apodemus uralensis">Ойн хулгана</option>
+        </optgroup>
+        <optgroup label="Хулгана (Mus)">
+          <option value="Mus">Mus</option>
+          <option value="Mus musculus">Гэрийн хулгана</option>
+        </optgroup>
+        <optgroup label="Харх (Rattus)">
+          <option value="Rattus norvegicus">Бор харх</option>
+        </optgroup>
+        <optgroup label="Үсэрч Буй Хулгана (Orientallactaga)">
+          <option value="Orientallactaga">Orientallactaga</option>
+          <option value="Orientallactaga balikunica">Өмнөговийн алагдаага</option>
+          <option value="Orientallactaga bullata">Говийн алагдаага</option>
+          <option value="Orientallactaga sibirica">Сибирь алагдаага</option>
+        </optgroup>
+        <optgroup label="Үсэрч Буй Хулгана (Cardiocranius)">
+          <option value="Cardiocranius paradoxus">Таван-хуруут атигдаахай</option>
+        </optgroup>
+        <optgroup label="Үсэрч Буй Хулгана (Dipus)">
+          <option value="Dipus sagitta">Савагдаахай</option>
+        </optgroup>
+        <optgroup label="Үсэрч Буй Хулгана (Euchoreutes)">
+          <option value="Euchoreutes naso">Соотол алагдаага</option>
+        </optgroup>
+        <optgroup label="Үсэрч Буй Хулгана (Pygeretmus)">
+          <option value="Pygeretmus pumilio">Зэгэл алагдааганцар</option>
+        </optgroup>
+        <optgroup label="Үсэрч Буй Хулгана (Salpingotus)">
+            <option value="Salpingotus crassicauda">Өөхөн-сүүлт атигдаахай</option>
+            <option value="Salpingotus kozlovi">Козловын атигдаахай</option>
+        </optgroup>
+        <optgroup label="Үсэрч Буй Хулгана (Stylodipus)">
+          <option value="Stylodipus andrewsi">Монгол даахай</option>
+          <option value="Stylodipus sungorus">Зүүнгарын даахай</option>
+        </optgroup>
+        <optgroup label="Үнэг (Vulpes)">
+          <option value="Vulpes corsac">Хярс</option>
+          <option value="Vulpes vulpes">Шар үнэг</option>
+        </optgroup>
+        <optgroup label="Дорго (Meles)">
+         <option value="Meles leucurus">Халздай дорго</option>
+         <option value="Meles meles">Meles meles</option>
+       </optgroup>
+       <optgroup label="Хошуу (Mustela)">
+         <option value="Mustela altaica">Хээрийн солонго</option>
+         <option value="Mustela erminea">цагаан Үен</option>
+         <option value="Mustela eversmanii">Өмхий хүрэн</option>
+         <option value="Mustela nivalis">Хотны Үен</option>
+       </optgroup>
+       <optgroup label="Суусар (Martes)">
+         <option value="Martes foina">Хадны суусар</option>
+        </optgroup>
+        <optgroup label="Ээрлэг Илжиг (Equus)">
+          <option value="Equus hemionus">Монгол хулан</option>
+        </optgroup>
+        <optgroup label="Буга (Cervus)">
+          <option value="Cervus canadensis">Cervus canadensis</option>
+        </optgroup>
+        <optgroup label="Зээр (Gazella)">
+          <option value="Gazella subgutturosa">Хар сүүлт зээр</option>
+        </optgroup>
+        <optgroup label="Ямаа (Capra)">
+          <option value="Capra hircus">Capra hircus</option>
+        </optgroup>
+        <optgroup label="Хонь (Ovis)">
+            <option value="Ovis ammon">Аргаль</option>
+            <option value="Ovis aries">Гэрийн хонь</option>
+        </optgroup>
+        <optgroup label="Тэмээ (Camelus)">
+          <option value="Camelus bactrianus">Хавтгай</option>
+      </optgroup>
+      <optgroup label="Сарлаг (Bos)">
+          <option value="Bos grunniens">Зэрлэг сарлаг</option>
+      </optgroup>
+    </select>
+<br>
+<h3 class="Titles">Хөхтөн амьтдын <br> хүрээ Сонгогч</h3>
+<p class="instruction">Газрын зураг дээр хөхтөн амьтдын хүрээг 
+    <br> нэмэхийн тулд унадаг цэсийг ашиглана уу</p>
+  <select name="Range[]" multiple id="range" id="range">
+    <optgroup label="Зараа (Hemiechinus)">
+      <option value="Hemiechinus auritus">Дагуур зараа</option>
+    </optgroup>
+    <optgroup label="Хашир (Sorex)">
+      <option value="Sorex araneus">Хэвдүүн атаахай</option>
+      <option value="Sorex caecutiens">Дааган атаахай</option>
+      <option value="Sorex daphaenodon">Бэсрэг атаахай</option>
+      <option value="Sorex isodon">Тэгш шүдэт атаахай</option>
+      <option value="Sorex minutissimus">Өөдсөн атаахай</option>
+      <option value="Sorex roboratus">Тавшгар атаахай</option>
+      <option value="Sorex tundrensis">Цармын атаахай</option>
+      </optgroup>
+      <optgroup label="Хашир (Crocidura)">
+        <option value="Crocidura shantungensis">Азийн малтаахай</option>
+        <option value="Crocidura suaveolens">Нутын малтаахай</option>
+      </optgroup>
+      <optgroup label="Хашир (Neomys)">
+        <option value="Neomys fodiens">Усч гэрэлзгэнэ</option>
+      </optgroup>
+      <optgroup label="Багваахай (Vespertilio)">
+        <option value="Vespertilio murinus">Буурал сармаахай</option>
+      </optgroup>
+      <optgroup label="Багваахай (Hypsugo)">
+        <option value="Hypsugo alaschanicus">Бор турсаахай</option>
+      </optgroup>
+      <optgroup label="Багваахай (Cnephaeus)">
+        <option value="Cnephaeus gobiensis">Говийн сармаахай</option>
+        <option value="Cnephaeus nilssonii">Умарын сармаахай</option>
+        <option value="Cnephaeus serotinus">Хожуу сармаахай</option>
+      </optgroup>
+      <optgroup label="Багваахай (Myotis)">
+        <option value="Myotis brandtii">Myotis brandtii</option>
+        <option value="Myotis davidii">Хээрийн сахалт багваахай</option>
+        <option value="Myotis nattereri">Myotis nattereri</option>
+        <option value="Myotis petax">Дорнодын уссаг багваахай</option>
+        <option value="Myotis sibiricus">Myotis sibiricus</option>
+        </optgroup>
+        <optgroup label="Багваахай (Plecotus)">
+            <option value="Plecotus kozlovi">Саарал соотон багваахай</option>
+            <option value="Plecotus ognevi">Бор соотон багваахай</option>
+        </optgroup>
+        <optgroup label="Туулай (Lepus)">
+          <option value="Lepus timidus">Чандага</option>
+          <option value="Lepus tolai">Бор туулай</option>
+        </optgroup>
+        <optgroup label="Огдой (Ochotona)">
+          <option value="Ochotona">Ochotona</option>
+          <option value="Ochotona alpina">Тагийн огдой</option>
+          <option value="Ochotona dauurica">Дагуур огдой</option>
+          <option value="Ochotona hoffmanni">Ochotona hoffmanni</option>
+          <option value="Ochotona hyperborea">Асганы огдой</option>
+          <option value="Ochotona pallasii">Монгол огдой</option>
+          </optgroup>
+          <optgroup label="Тарвага (Marmota)">
+              <option value="Marmota baibacina">Алтайн тарвага</option>
+              <option value="Marmota sibirica">Монгол тарвага</option>
+          </optgroup>
+          <optgroup label="Газрын Хэрэм (Spermophilus)">
+              <option value="Spermophilus alashanicus">Гозоорой зурам</option>
+              <option value="Spermophilus dauricus">Дагуур зурам</option>
+              <option value="Spermophilus pallidicauda">Цайвар сүүлт зурам</option>
+          </optgroup>
+          <optgroup label="Газрын Хэрэм (Urocitellus)">
+            <option value="Urocitellus undulatus">Урт сүүлт зурам</option>
+          </optgroup>
+          <optgroup label="Бургас (Eutamias)">
+            <option value="Eutamias sibiricus">Жирх</option>
+          </optgroup>
+          <optgroup label="Хэрэм (Sciurus)">
+            <option value="Sciurus vulgaris">Бараан хэрэм</option>
+          </optgroup>
+          <optgroup label="Хулгана Хэрэм (Dryomys)">
+            <option value="Dryomys nitedula">Ойн унтаахай</option>
+          </optgroup>
+          <optgroup label="Номин (Myospalax)">
+              <option value="Myospalax aspalax">Дагуур номин</option>
+              <option value="Myospalax psilurus">Манжуур номин</option>
+          </optgroup>
+    <optgroup label="Оготно (Alexandromys)">
+      <option value="Alexandromys fortis">Өргөөнч оготно</option>
+      <option value="Alexandromys limnophilus">Зүлгийн оготно</option>
+      <option value="Alexandromys maximowiczii">Ширгийн оготно</option>
+      <option value="Alexandromys mongolicus">Монгол оготно</option>
+      <option value="Alexandromys oeconomus">Мэхээрч оготно</option>
+    </optgroup>
+    <optgroup label="Оготно (Microtus)">
+      <option value="Microtus arvalis">Бараан оготно</option>
+    </optgroup>
+    <optgroup label="Оготно (Lasiopodomys)">
+        <option value="Lasiopodomys brandtii">Үлийн цагаан оготно</option>
+        <option value="Lasiopodomys mandarinus">Үлийн Бор оготно</option>
+    </optgroup>
+    <optgroup label="Оготно (Clethrionomys)">
+      <option value="Clethrionomys rutilus">Ойн улаан оготно</option>
+    </optgroup>
+    <optgroup label="Оготно (Craseomys)">
+      <option value="Craseomys rufocanus">Ойн хүрэн оготно</option>
+    </optgroup>
+    <optgroup label="Оготно (Stenocranius)">
+      <option value="Stenocranius gregalis">Хэргэлзий оготно</option>
+    </optgroup>
+    <optgroup label="Оготно (Alticola)">
+        <option value="Alticola barakshin">Говь-алтайн барагчин</option>
+        <option value="Alticola semicanus">Хадны барагчин</option>
+        <option value="Alticola strelzowi">Тавшгар барагчин</option>
+        <option value="Alticola tuvinicus">Тува барагчин</option>
+    </optgroup>
+    <optgroup label="Оготно (Eolagurus)">
+      <option value="Eolagurus luteus">Овын оготно</option>
+    </optgroup>
+    <optgroup label="Оготно (Myopus)">
+      <option value="Myopus schisticolor">Ойн хөвхөлжин</option>
+    </optgroup>
+    <optgroup label="Оготно (Ellobius)">
+      <option value="Ellobius tancrei">Сохдой оготно</option>
+    </optgroup>
+    <optgroup label="Заарт харх (Ondatra)">
+      <option value="Ondatra zibethicus">Заарт харх</option>
+    </optgroup>
+    <optgroup label="Шишүүхэй (Allocricetulus)">
+        <option value="Allocricetulus curtatus">Цомч шишүүхэй</option>
+    </optgroup>
+    <optgroup label="Шишүүхэй (Cricetulus)">
+      <option value="Cricetulus barabensis">Хөх шишүүхэй</option>
+      <option value="Cricetulus longicaudatus">Сүүлэрхэг шишүүхэй</option>
+      <option value="Cricetulus sokolovi">Соколоьын шишүүхэй</option>
+    </optgroup>
+    <optgroup label="Шишүүхэй (Nothocricetulus)">
+      <option value="Nothocricetulus migratorius">Бор шишүүхэй</option>
+    </optgroup>
+    <optgroup label="Шишүүхэй (Phodopus)">
+        <option value="Phodopus campbelli">Орог зураг</option>
+        <option value="Phodopus roborovskii">Элсний зусаг</option>
+    </optgroup>
+    <optgroup label="Чичүүл (Meriones)">
+      <option value="Meriones meridianus">Шар чичүүл</option>
+      <option value="Meriones tamariscinus">Сухайн чичүүл</option>
+      <option value="Meriones unguiculatus">Монгол чичүүл</option>
+    </optgroup>
+    <optgroup label="Чичүүл (Rhombomys)">
+      <option value="Rhombomys opimus">Морин чичүүл</option>
+    </optgroup>
+    <optgroup label="Хулгана (Apodemus)">
+        <option value="Apodemus agrarius">Хээрийн хулгана</option>
+        <option value="Apodemus peninsulae">Азийн хулгана</option>
+        <option value="Apodemus uralensis">Ойн хулгана</option>
+    </optgroup>
+    <optgroup label="Хулгана (Mus)">
+      <option value="Mus musculus">Гэрийн хулгана</option>
+    </optgroup>
+    <optgroup label="Харх (Rattus)">
+      <option value="Rattus norvegicus">Бор харх</option>
+    </optgroup>
+    <optgroup label="Үсэрч Буй Хулгана (Orientallactaga)">
+        <option value="Orientallactaga">Orientallactaga</option>
+        <option value="Orientallactaga balikunica">Өмнөговийн алагдаага</option>
+        <option value="Orientallactaga bullata">Говийн алагдаага</option>
+        <option value="Orientallactaga sibirica">Сибирь алагдаага</option>
+    </optgroup>
+    <optgroup label="Үсэрч Буй Хулгана (Cardiocranius)">
+      <option value="Cardiocranius paradoxus">Таван-хуруут атигдаахай</option>
+    </optgroup>
+    <optgroup label="Үсэрч Буй Хулгана (Dipus)">
+      <option value="Dipus sagitta">Савагдаахай</option>
+    </optgroup>
+    <optgroup label="Үсэрч Буй Хулгана (Euchoreutes)">
+      <option value="Euchoreutes naso">Соотол алагдаага</option>
+    </optgroup>
+    <optgroup label="Үсэрч Буй Хулгана (Pygeretmus)">
+        <option value="Pygeretmus pumilio">Зэгэл алагдааганцар</option>
+    </optgroup>
+    <optgroup label="Үсэрч Буй Хулгана (Salpingotus)">
+      <option value="Salpingotus crassicauda">Өөхөн-сүүлт атигдаахай</option>
+      <option value="Salpingotus kozlovi">Козловын атигдаахай</option>
+    </optgroup>
+    <optgroup label="Үсэрч Буй Хулгана (Stylodipus)">
+      <option value="Stylodipus andrewsi">Монгол даахай</option>
+      <option value="Stylodipus sungorus">Зүүнгарын даахай</option>
+    </optgroup>
+    <optgroup label="Үнэг (Vulpes)">
+        <option value="Vulpes corsac">Хярс</option>
+        <option value="Vulpes vulpes">Шар үнэг</option>
+    </optgroup>
+    <optgroup label="Дорго (Meles)">
+     <option value="Meles leucurus">Халздай дорго</option>
+     <option value="Meles meles">Meles meles</option>
+   </optgroup>
+   <optgroup label="Хошуу (Mustela)">
+     <option value="Mustela altaica">Хээрийн солонго</option>
+     <option value="Mustela erminea">цагаан Үен</option>
+     <option value="Mustela nivalis">Хотны Үен</option>
+   </optgroup>
+   <optgroup label="Суусар (Martes)">
+     <option value="Martes foina">Хадны суусар</option>
+    </optgroup>
+    <optgroup label="Ээрлэг Илжиг (Equus)">
+      <option value="Equus hemionus">Монгол хулан</option>
+    </optgroup>
+    <optgroup label="Буга (Cervus)">
+      <option value="Cervus canadensis">Cervus canadensis</option>
+    </optgroup>
+  <optgroup label="Зээр (Gazella)">
+    <option value="Gazella subgutturosa">Хар сүүлт зээр</option>
+  </optgroup>
+  <optgroup label="Хонь (Ovis)">
+    <option value="Ovis ammon">Аргаль</option>
+  </optgroup>
+  <optgroup label="Тэмээ (Camelus)">
+    <option value="Camelus bactrianus">Хавтгай</option>
+</optgroup>
+  </select>
+  <br>
+<h3 class="Titles">Эктопаразит Сонгогч</h3>
+<p class="instruction">Эктопаразитуудыг газрын зураг дээр нэмэхийн <br>
+    тулд унадаг цэсийг ашиглана уу</p>
+  <select name="Parasites[]" multiple id="Ectoparasites" id="Ectoparasites">
+    <optgroup label="Эктопаразит">
+      <option value="Yes">Тодорхойгүй</option>
+      <option value="Arthropoda">Артроподууд</option>
+        <optgroup label="Flies">
+          <option value="Diptera">Яадаа</option>
+        </optgroup>
+        <optgroup label="Ticks and Mites">
+          <option value="Acari">Acari</option>
+          <option value="Ixodida">Ixodida</option>
+        </optgroup>
+        <optgroup label="Fleas">
+          <option value="Siphonaptera">Бүүрэг</option>
+        </optgroup>
+        <optgroup label="Lice">
+          <option value="Phthiraptera">Бөөс</option>
+        </optgroup>
+    </optgroup>
+    </select>
+    <br>
+    <h3 class="Titles">Эндопаразит Сонгогч</h3>
+<p class="instruction">Газрын зураг дээр эндопаразит нэмэхийн <br>
+    тулд унадаг цэсийг ашиглана уу</p>
+  <select name="Parasites[]" multiple id="Endoparasites" id="Endoparasites">
+    <optgroup label="Эндопаразит">
+          <option value="Yes">Тодорхойгүй</option>
+        </optgroup>
+    <optgroup label="Nematodes">
+          <option value="Rhabditida">Rhabditida</option>
+          <option value="Strongylida">Strongylida</option>
+          <option value="Oxyurida">Oxyurida</option>
+        <optgroup label="Cestodes">
+          <option value="Cyclophyllidea">Cyclophyllidea</option>
+        </optgroup>
+    </optgroup>
+    </select>
+  </div>
+
+  
+   <!--Year Slider-->
+<div id="slider"></div>
+
+
+
+<!--Legend-->
+<div id="legend" >
+  <h2 id="words">Газрын зургийн түлхүүр</h2>
+<div id="table">
+  <table>
+    <tr>
+        <td>
+         <span id="Bovidae"></span>
+         <em>Bovidae</em>
+       </td> 
+       <td>
+         <span id="Camelidae"></span>
+         <em>Camelidae</em>
+       </td>
+       <td>
+       <div id="Canidae"></div>
+         <em>Canidae</em>
+       </td>
+       <td>
+         <div id="Cervidae"></div>
+         <em>Cervidae</em>
+       </td>
+       <td>
+         <div id="Cricetidae"></div>
+         <em>Cricetidae</em>
+       </td>
+       <td>
+         <div id="Dipodidae"></div>
+         <em>Dipodidae</em>
+       </td>
+       <td>
+         <div id="Equidae"></div>
+         <em>Equidae</em>
+       </td>
+       <td>
+         <div id="Erinaceidae"></div>
+         <em>Erinaceidae</em>
+       </td>
+       </tr>
+       <tr>
+       <td>
+         <div id="Gliridae"></div>
+         <em>Gliridae</em>
+       </td>
+       <td>
+         <div id="Leporidae"></div>
+         <em>Leporidae</em>
+       </td>
+       <td>
+         <div id="Muridae"></div>
+         <em>Muridae</em>
+       </td>
+       <td>
+         <div id="Mustelidae"></div>
+         <em>Mustelidae</em>
+       </td>
+       <td>
+         <div id="Ochotonidae"></div>
+         <em>Ochotonidae</em>
+       </td>
+       <td>
+         <div id="Sciuridae"></div>
+         <em>Sciuridae</em>
+       </td>
+       <td>
+         <div id="Spalacidae"></div>
+         <em>Spalacidae</em>
+       </td>
+       <td>
+         <div id="Vespertilionidae"></div>
+         <em>Vespertilionidae</em>
+       </td>
+       </tr>
+</table>
+</div>
+</div>
+
+  <!--Map-->
+    <div id="mapId"></div>
+
+
+
+
+</body>
+
+
+<script src="Mongoliajson.js"></script>
+
+
+</html>
