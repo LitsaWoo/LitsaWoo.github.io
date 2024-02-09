@@ -20,14 +20,7 @@
 var Esri_WorldImagery = L.layerGroup([L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: false,
     
-  }).addTo(map),
-  
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lines/{z}/{x}/{y}{r}.{ext}', {
-    attribution: false,
-    minZoom: 0,
-    maxZoom: 20,
-    ext: 'png',
-  })]).addTo(map);
+  }).addTo(map);
   controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap")
   
   
