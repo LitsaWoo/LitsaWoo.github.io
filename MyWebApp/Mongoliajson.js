@@ -22,13 +22,13 @@ var Esri_WorldImagery = L.layerGroup([L.tileLayer('https://server.arcgisonline.c
     
   }).addTo(map),
   
-  L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lines/{z}/{x}/{y}{r}.{ext}', {
+ /*  L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lines/{z}/{x}/{y}{r}.{ext}', {
     attribution: false,
     minZoom: 0,
     maxZoom: 20,
     ext: 'png',
   })]).addTo(map);
-  controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap")
+  controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap") */
   
   
   //dark outline map
