@@ -4,42 +4,51 @@
 
   document.addEventListener("DOMContentLoaded", function() {
     var map = L.map('mapId', {
-       center: [46.955157, 105.305162],
-       zoom: 4,
-       zoomControl: false,
-       tap: true
-     });
-     
-     /*control panel to display map layers*/
-     
-     var controlLayers = L.control.layers(baseMap).addTo(map);
-     
-     // Chose a map style from http://leaflet-extras.github.io/leaflet-providers/preview/
-   
+        center: [46.955157, 105.305162],
+        zoom: 5,
+        zoomControl: false,
+        tap: true
+    });
+
+    /*control panel to display map layers*/
+
+    var controlLayers = L.control.layers(baseMap).addTo(map);
+
+    // Chose a map style from http://leaflet-extras.github.io/leaflet-providers/preview/
+
    //terrain map with outline/label overlay
-   var Esri_WorldImagery = L.layerGroup([L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-       attribution: false,
-       
-     })]).addTo(map);
-     
-    /* L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lines/{z}/{x}/{y}{r}.{ext}', {
-       attribution: false,
-       minZoom: 0,
-       maxZoom: 20,
-       ext: 'png',
-     })]).addTo(map); */
-     controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap")
-     
-     
-     //dark outline map
-     var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-       attribution: false,
-       maxZoom: 20,
-     
-     });
-     controlLayers.addBaseLayer(CartoDB_DarkMatter, "Street Basemap");
-     
-    
+var Esri_WorldImagery = L.layerGroup([
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: false,
+  })
+]).addTo(map);
+
+L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lines/{z}/{x}/{y}{r}.{ext}', {
+  attribution: false,
+  minZoom: 0,
+  maxZoom: 20,
+  ext: 'png'
+}).addTo(map);
+
+L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_terrain_labels/{z}/{x}/{y}{r}.{ext}', {
+  minZoom: 0,
+  maxZoom: 18,
+  attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  ext: 'png'
+}).addTo(map);
+
+controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
+
+
+
+    //dark outline map
+    var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: false,
+        maxZoom: 20,
+    });
+    controlLayers.addBaseLayer(CartoDB_DarkMatter, "Street Basemap");
+
+
      
      // Create a variable to add to the control panel variable
      
@@ -48,6 +57,7 @@
        "Terrain Basemap": Esri_WorldImagery,
        
      }
+    
    // Zoom controls
    var zoomOptions = {
      zoomInText: '+',
@@ -80,10 +90,10 @@
    const slider = document.getElementById('slider');
    
      noUiSlider.create(slider, {
-         start: [1999, 2023],
+         start: [1997, 2023],
          connect: true,
          range: {
-           'min': 1999,
+           'min': 1997,
            'max': 2022
          },
          step: 1,
@@ -277,14 +287,16 @@
            }
    
            return L.circleMarker(latlng, {
-               fillColor: color.color,
-               color: color.stroke,
-               weight: 2,
-               opacity: 1,
-               fillOpacity: 1
-           });
-       }
-   }).addTo(markers);
+            fillColor: color.color,
+            color: color.stroke,
+            radius: 7.5,
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 1
+        });
+    }
+}).addTo(markers);
+
    
    map.addLayer(markers);
    }
@@ -413,10 +425,8 @@
        });
    
        
-   }
-     });
-     function navigateToPage(page) {
-       window.location.href = page;
-     }
-     
-     
+      }
+    });
+    function navigateToPage(page) {
+      window.location.href = page;
+    }
