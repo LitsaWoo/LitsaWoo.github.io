@@ -58,7 +58,27 @@ margin: 0;
   border: none;
   border-radius: 10px;
   position: relative;
-  left: 30%;
+  left: 40%;
+  margin-top: 5%;
+}
+
+#Include {
+  background-color: rgb(212, 212, 212);
+  color: black;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  left: 0.1%;
+  margin-top: 5%;
+}
+
+#Exclude {
+  background-color: rgb(212, 212, 212);
+  color: black;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  left: 3%;
   margin-top: 5%;
 }
 
