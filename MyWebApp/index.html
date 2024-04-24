@@ -12,9 +12,9 @@
   <script src="JS/markercluster-src.js"></script>
  <script src="JS/noUiSlider/nouislider.js"></script>
   <script src="Libraries/Dropdown/multiselect_dropdown_with_checkbox_jquery/js/multiselect/jquery.multiselect.js"></script>
-  <script src="Libraries/Slide Menu/Leaflet.SlideMenu-0.4.1/src/L.Control.SlideMenu.js"></script>
-  <script src="Libraries/Legend/Leaflet.Legend-1.0.0/src/leaflet.legend.js"></script>
-  <script src="Libraries/wNumb/wnumb-1.2.0/wNumb.js"></script>
+  <!-- <script src="Libraries/Slide Menu/Leaflet.SlideMenu-0.4.1/src/L.Control.SlideMenu.js"></script>
+  <script src="Libraries/Legend/Leaflet.Legend-1.0.0/src/leaflet.legend.js"></script> ---> 
+  <script src="Libraries/wNumb/wnumb-1.2.0/wNumb.js"></script> 
   <script src="JS/leaflet.markercluster.freezable.js"></script>
   
 
@@ -60,7 +60,7 @@
           With the goal of accessibility, this webpage can be displayed in English and Mongolian.
           <br><br>
           This map can display mammal species, their ranges, and their associated parasites. 
-          The available collections will range from 1999 to the most recent trip to Mongolia in 2022.
+          The available collections will range from 1997 to the most recent trip to Mongolia in 2022.
         </p>
       <h3>Creators</h3>
         <p><strong>Creator: </strong><a class="link" href="https://litsawoo.github.io/" target="_blank">Litsa Wooten</a> (wootenl@unm.edu) 
@@ -101,7 +101,7 @@
   border: none;
   border-radius: 10px;
   position: relative;
-  left: 25%;
+  left: 30%;
   margin-top: 5%;
 ">Toggle Cluster</button>
   <h3 class="Titles">Mammal Selector</h3>
@@ -125,6 +125,7 @@
     <optgroup label="Alticola">
         <option value="Alticola">Alticola</option>
         <option value="Alticola barakshin">Alticola barakshin</option>
+        <option value="Alticola barakshin">Alticola barakshin cf.</option>
         <option value="Alticola semicanus">Alticola semicanus</option>
         <option value="Alticola strelzowi">Alticola strelzowi</option>
         <option value="Alticola tuvinicus cf.">Alticola tuvinicus cf.</option>
@@ -174,8 +175,7 @@
   <option value="Cricetulus barabensis cf.">Cricetulus barabensis cf.</option>
   <option value="Cricetulus longicaudatus">Cricetulus longicaudatus</option>
   <option value="Cricetulus longicaudatus cf.">Cricetulus longicaudatus cf.</option>
-  <option value="Cricetulus sokolovi">Cricetulus sokolovi</option>
-</optgroup>
+  </optgroup>
 <optgroup label="Crocidura">
   <option value="Crocidura shantungensis">Crocidura shantungensis</option>
   <option value="Crocidura suaveolens">Crocidura suaveolens</option>
@@ -353,6 +353,9 @@
       <option value="Vespertilio">Vespertilio</option>
       <option value="Vespertilio murinus">Vespertilio murinus</option>
     </optgroup>
+    <optgroup label="Vormela">
+      <option value="Vormela peregusna">Vormela peregusna</option>
+    </optgroup>
     <optgroup label="Vulpes">
       <option value="Vulpes corsac">Vulpes corsac</option>
       <option value="Vulpes vulpes">Vulpes vulpes</option>
@@ -407,8 +410,7 @@
 <optgroup label="Cricetulus">
   <option value="Cricetulus barabensis">Cricetulus barabensis</option>
   <option value="Cricetulus longicaudatus">Cricetulus longicaudatus</option>
-  <option value="Cricetulus sokolovi">Cricetulus sokolovi</option>
-</optgroup>
+ </optgroup>
 <optgroup label="Crocidura">
   <option value="Crocidura shantungensis">Crocidura shantungensis</option>
   <option value="Crocidura suaveolens">Crocidura suaveolens</option>
@@ -573,6 +575,12 @@
     </optgroup>
   </select>
   <br>
+
+  <button class="button" id="Include">Include Parasites</button>
+
+  <button class="button" id="Exclude">Exclude Parasites</button>
+
+  <br>
 <h3 class="Titles">Ectoparasite Selector</h3>
 <p class="instruction">Use the dropdown menu to add <br>
   a ectoparasites to the map</p>
@@ -591,6 +599,7 @@
           <option value="Siphonaptera">Siphonaptera</option>
         </optgroup>
         <optgroup label="Lice">
+          <option value="Psocodea">Unidentified Lice</option>
           <option value="Phthiraptera">Phthiraptera</option>
         </optgroup>
     </optgroup>
@@ -685,9 +694,14 @@
   <em>Sciuridae</em>
 </td>
 <td>
+  <div id="Soricidae"></div>
+  <em>Soricidae</em>
+</td>
+<td>
   <div id="Spalacidae"></div>
   <em>Spalacidae</em>
 </td>
+<tr>
 <td>
   <div id="Vespertilionidae"></div>
   <em>Vespertilionidae</em>
