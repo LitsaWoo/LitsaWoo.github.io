@@ -431,7 +431,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
              };
            },
            onEachFeature: function(feature, layer) {
-             var popupContent = "<strong>Species Range: </strong>" + feature.properties.SCI_NAME + "<br>";
+             var popupContent = "<strong>Тархац Нутгийг : </strong>" + feature.properties.MONG_NAME + "<br>";
              layer.bindPopup(popupContent);
            }
          });
