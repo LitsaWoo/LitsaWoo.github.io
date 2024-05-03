@@ -145,7 +145,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
      placeholder: 'Эндопаразитын зүйл сонгох',
      search: 'Эрэл хайгуул хийх',
      selectAll: 'Бүгдийг сонгох',
-     unselectAll: 'Бүгдийг нь сонгоно уу'},
+     unselectAll: 'Бүх сонголтыг цуцлах'},
      search: true,
      selectAll: true,
      selectGroup: true,
@@ -288,7 +288,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
                "<strong>Эктопаразит Олдсон: </strong>" + feature.properties.ParaEctoMong + "<br>" +
                "<strong>Олдсон Эктопаразитын Тоо: </strong>" + feature.properties.total_ecto + "<br>" +
                "<strong>Эндопаразит Олдсон: </strong>" + feature.properties.ParaEndoMong + "<br>" +
-               "<strong>Олдсон Эндопаразит Тоо: </strong>" + feature.properties.total_endo + "<br>" +
+               "<strong>Олдсон Эндопаразитын Тоо: </strong>" + feature.properties.total_endo + "<br>" +
                "<strong>Музейн Дугаар: </strong><a href='https://arctos.database.museum/guid/" + MSB_mammal_number + "' target='_blank'>" + MSB_mammal_number + "</a>";
            layer.bindPopup(popupContent);
        },
