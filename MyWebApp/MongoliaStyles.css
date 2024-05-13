@@ -14,17 +14,16 @@ margin: 0;
 #Titles {
   position: absolute;
     z-index: 1000;
-    background-color: rgba(0,0,0, 0.5);
     width: 275px;
     border-radius: 30px;
     color: white;
     font-size: 25px;
     text-align: center;
     left: 40%;
-    top: 30px;
     height: 45px;
     padding-top: 15px;
 }
+
 
 #searchbar{
     z-index: 4000;
