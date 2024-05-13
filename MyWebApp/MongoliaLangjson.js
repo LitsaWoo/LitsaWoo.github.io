@@ -93,7 +93,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
          connect: true,
          range: {
            'min': 1997,
-           'max': 2022
+           'max': 2023
          },
          step: 1,
          connect: true,
