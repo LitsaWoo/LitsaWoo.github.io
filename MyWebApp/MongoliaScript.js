@@ -320,6 +320,67 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
      
      isClusteringEnabled = !isClusteringEnabled; // Toggle the flag
    });
+   // Function to convert filtered features to CSV
+function featuresToCSV(features) {
+  let csv = 'scientific_name,family,nk,Date,country,state_prov,latitude,longitude,ParaEcto,total_ecto,ParaEndo,total_endo,guid\n';
+  features.forEach(feature => {
+      const props = feature.properties;
+      const coords = feature.geometry.coordinates;
+      const latitude = coords[1]; // Latitude is the second element in the coordinates array
+      const longitude = coords[0]; // Longitude is the first element in the coordinates array
+      // Escape double quotes and enclose in double quotes
+      const paraEcto = props.ParaEcto ? `"${props.ParaEcto.replace(/"/g, '""')}"` : '';
+      const paraEndo = props.ParaEndo ? `"${props.ParaEndo.replace(/"/g, '""')}"` : '';
+      csv += `${props.scientific_name},${props.family},${props.nk},${props.Date},${props.country},${props.state_prov},${latitude},${longitude},${paraEcto},${props.total_ecto},${paraEndo},${props.total_endo},${props.guid}\n`;
+  });
+  return csv;
+}
+
+
+// Function to download CSV
+function downloadCSV(csv, filename) {
+  let blob = new Blob([csv], { type: 'text/csv' });
+  let url = window.URL.createObjectURL(blob);
+
+  let a = document.createElement('a');
+  a.setAttribute('hidden', '');
+  a.setAttribute('href', url);
+  a.setAttribute('download', filename);
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// Event listener for the download button
+document.getElementById('download').addEventListener('click', function () {
+  // Get the selected values from the dropdown filters
+  const selectedMammals = $('#Species').val() || [];
+  const selectedEctoparasites = $('#Ectoparasites').val() || [];
+  const selectedEndoparasites = $('#Endoparasites').val() || [];
+  const yearRange = slider.noUiSlider.get();
+
+  // Filter the features based on the selected values and year range
+  const filteredFeatures = features.filter(feature => {
+      const year = new Date(feature.properties.Date).getFullYear();
+      const paraEndoLower = feature.properties.ParaEndo.toLowerCase();
+      const selectedEndoparasitesLower = selectedEndoparasites.map(name => name.toLowerCase());
+      const paraEctoLower = feature.properties.ParaEcto.toLowerCase();
+      const selectedEctoparasitesLower = selectedEctoparasites.map(name => name.toLowerCase());
+
+      const isMammalIncluded = selectedMammals.length === 0 || selectedMammals.includes(feature.properties.scientific_name);
+      const isEctoparasiteIncluded = selectedEctoparasites.length === 0 || selectedEctoparasitesLower.every(selectedName => paraEctoLower.includes(selectedName));
+      const isEndoparasiteIncluded = selectedEndoparasites.length === 0 || selectedEndoparasitesLower.every(selectedName => paraEndoLower.includes(selectedName));
+
+      return isMammalIncluded && isEctoparasiteIncluded && isEndoparasiteIncluded && (year >= yearRange[0] && year <= yearRange[1]);
+  });
+
+  // Convert filtered features to CSV
+  const csv = featuresToCSV(filteredFeatures);
+
+  // Trigger download
+  downloadCSV(csv, 'filtered_data.csv');
+});
+
          }
        );
    
