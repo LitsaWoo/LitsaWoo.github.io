@@ -345,7 +345,7 @@ function featuresToCSV(features) {
       // Escape double quotes and enclose in double quotes
       const ParaEctoMong = props.ParaEctoMong ? `"${props.ParaEctoMong.replace(/"/g, '""')}"` : '';
       const ParaEndoMong = props.ParaEndoMong ? `"${props.ParaEndoMong.replace(/"/g, '""')}"` : '';
-      csv += `${props.mongolian_name},${props.nk},${props.MongDate},${props.country_mong},${props.state_prov},${latitude},${longitude},${ParaEctoMong},${props.total_ectoMong},${ParaEndoMong},${props.total_endoMong},${props.guid}\n`;
+      csv += `${props.mongolian_name},${props.nk},${props.MongDate},${props.country_mong},${props.aimags},${latitude},${longitude},${ParaEctoMong},${props.total_ectoMong},${ParaEndoMong},${props.total_endoMong},${props.guid}\n`;
   });
   return csv;
 }
