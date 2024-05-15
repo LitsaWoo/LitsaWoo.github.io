@@ -335,7 +335,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
     });
     // Function to convert filtered features to CSV
  function featuresToCSV(features) {
-   let csv = 'mongolian_name,nk,MongDate,country_mong,aimags,latitude,longitude,ParaEctoMong,total_ectoMong,ParaEndoMong,total_endoMong,guid\n';
+   let csv = 'mongolian_name,nk,MongDate,aimags,latitude,longitude,ParaEctoMong,total_ectoMong,ParaEndoMong,total_endoMong,guid\n';
    features.forEach(feature => {
        const props = feature.properties;
        const coords = feature.geometry.coordinates;
@@ -344,7 +344,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
        // Escape double quotes and enclose in double quotes
        const ParaEctoMong = props.ParaEctoMong ? `"${props.ParaEctoMong.replace(/"/g, '""')}"` : '';
        const ParaEndoMong = props.ParaEndoMong ? `"${props.ParaEndoMong.replace(/"/g, '""')}"` : '';
-       csv += `${props.mongolian_name},${props.nk},${props.MongDate},${country_mong},${props.country},${props.state_prov},${latitude},${longitude},${ParaEctoMong},${props.total_ectoMong},${ParaEndoMong},${props.total_endoMong},${props.guid}\n`;
+       csv += `${props.mongolian_name},${props.nk},${props.MongDate},${props.country},${props.state_prov},${latitude},${longitude},${ParaEctoMong},${props.total_ectoMong},${ParaEndoMong},${props.total_endoMong},${props.guid}\n`;
    });
    return csv;
  }
