@@ -286,9 +286,9 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
                "<strong>Аймаг: </strong>" + feature.properties.aimags + "<br>" +
                "<strong>Координатууд: </strong>" + feature.geometry.coordinates + "<br>" +
                "<strong>Эктопаразит Олдсон: </strong>" + feature.properties.ParaEctoMong + "<br>" +
-               "<strong>Олдсон Эктопаразитын Тоо: </strong>" + feature.properties.total_ecto + "<br>" +
+               "<strong>Олдсон Эктопаразитын Тоо: </strong>" + feature.properties.total_ectoMong + "<br>" +
                "<strong>Эндопаразит Олдсон: </strong>" + feature.properties.ParaEndoMong + "<br>" +
-               "<strong>Олдсон Эндопаразитын Тоо: </strong>" + feature.properties.total_endo + "<br>" +
+               "<strong>Олдсон Эндопаразитын Тоо: </strong>" + feature.properties.total_endoMong + "<br>" +
                "<strong>Музейн Дугаар: </strong><a href='https://arctos.database.museum/guid/" + MSB_mammal_number + "' target='_blank'>" + MSB_mammal_number + "</a>";
            layer.bindPopup(popupContent);
        },
