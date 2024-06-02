@@ -288,7 +288,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
    
            return L.circleMarker(latlng, {
             fillColor: color.color,
-            color: color.stroke,
+            color: color.outlineColor,
             radius: 7.5,
             weight: 3,
             opacity: 1,
