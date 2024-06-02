@@ -157,39 +157,39 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
          function getColor(family) {
            switch (family) {
              case "Bovidae":
-               return {color: "rgba(128, 0, 0, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; //  maroon
+               return {color: "rgba(128, 0, 0, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; //  maroon
              case "Camelidae":
-               return {color: "rgba(170, 110, 40, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // brown
+               return {color: "rgba(170, 110, 40, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // brown
              case "Canidae":
-               return {color: "rgba(220, 190, 255, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // lavender
+               return {color: "rgba(220, 190, 255, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // lavender
              case "Cervidae":
-               return {color: "rgba(0, 128, 128, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // teal
+               return {color: "rgba(0, 128, 128, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // teal
              case "Cricetidae":
-               return {color: "rgba(100, 25, 10, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // red
+               return {color: "rgba(100, 25, 10, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // red
              case "Dipodidae":
-               return {color: "rgba(0, 0, 0, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // black
+               return {color: "rgba(0, 0, 0, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // black
              case "Equidae":
-               return {color: "rgba(0, 0, 128, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // navy
+               return {color: "rgba(0, 0, 128, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // navy
              case "Erinaceidae":
-               return {color: "rgba(245, 130, 48, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // orange
+               return {color: "rgba(245, 130, 48, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // orange
              case "Gliridae":
-               return {color: "rgba(255, 255, 25, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // yellow
+               return {color: "rgba(255, 255, 25, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // yellow
               case "Leporidae":
-               return {color: "rgba(210, 245, 60, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // lime
+               return {color: "rgba(210, 245, 60, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // lime
              case "Muridae":
-               return {color: "rgba(60, 180, 75, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // green
+               return {color: "rgba(60, 180, 75, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // green
              case "Mustelidae":
-               return {color: "rgba(240, 50, 230, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // magenta
+               return {color: "rgba(240, 50, 230, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // magenta
              case "Ochotonidae":
-               return {color: "rgba(0, 130, 200, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // blue
+               return {color: "rgba(0, 130, 200, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // blue
              case "Sciuridae":
-               return {color: "rgba(145, 30, 180, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // purple
+               return {color: "rgba(145, 30, 180, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // purple
              case "Soricidae":
-              return {color: "rgba(70, 240, 240, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // cyan
+              return {color: "rgba(70, 240, 240, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // cyan
              case "Spalacidae":
-               return {color: "rgba(128, 128, 128, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // grey
+               return {color: "rgba(128, 128, 128, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // grey
              case "Vespertilionidae":
-               return {color: "rgba(255, 255, 255, 1.0)", outlineColor: "rgba(0, 0, 0, 1.0)"}; // white
+               return {color: "rgba(255, 255, 255, 1.0)", stroke: "rgba(0, 0, 0, 1.0)"}; // white
              
            }      
          }
@@ -288,7 +288,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
    
            return L.circleMarker(latlng, {
             fillColor: color.color,
-            color: color.outlineColor,
+            color: color.stroke,
             radius: 7.5,
             weight: 3,
             opacity: 1,
