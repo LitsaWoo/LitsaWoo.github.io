@@ -290,7 +290,7 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
             fillColor: color.color,
             color: color.stroke,
             radius: 7.5,
-            weight: 1,
+            weight: 3,
             opacity: 1,
             fillOpacity: 1
         });
