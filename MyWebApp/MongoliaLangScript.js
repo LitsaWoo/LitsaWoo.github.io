@@ -89,11 +89,11 @@ controlLayers.addBaseLayer(Esri_WorldImagery, "Terrain Basemap");
    const slider = document.getElementById('slider');
    
      noUiSlider.create(slider, {
-         start: [1997, 2023],
+         start: [1997, 2025],
          connect: true,
          range: {
            'min': 1997,
-           'max': 2023
+           'max': 2025
          },
          step: 1,
          connect: true,
